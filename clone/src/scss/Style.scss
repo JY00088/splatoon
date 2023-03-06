@@ -1,0 +1,210 @@
+@import "reset.css";
+@import "font.css";
+
+header {
+    //position: fixed;
+    //left: 0;
+    //top: 0;
+    width: 100%;
+    height: 70px;
+    flex-direction: column;
+    align-items: center;
+    color: wheat;
+
+    .gone {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ac000d;
+        height: 60px;
+        background-color: #e60012;
+        padding-left: 30px;
+        padding-right: 30px;
+        position: sticky;
+        
+        .logoimg {
+
+            a {
+                cursor: pointer;
+                text-decoration: underline;
+
+                .logo {
+                    display: block;
+                    width: 97px;
+                    height: 24px;
+                }
+            }
+        }
+
+        .loginimg {
+            svg {
+                color: white;
+                width: 17px;
+                height: 19px;
+                margin-bottom: 0;
+                margin-right: 9px;
+            }
+
+            .login {
+                font-size: 14px;
+                font-weight: 700;
+                color: #fff;
+                transform: translateY(-1px);
+            }
+        }
+    }
+
+    .here {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #000;
+        // display: grid;
+        // grid-template-columns: 1fr;
+        // grid-template-rows: auto auto;
+        // position: sticky;
+        // text-align: center;
+        width: 100%;
+        z-index: 100;
+
+        .motion {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+            
+            .li1 {
+                list-style: none;
+                .afbtn {
+                    font-family: "s4";
+                    font-weight: 700;
+                    align-items: center;
+                    display: inline-flex;
+                    font-size: 1rem;
+                    line-height: 1;
+                    border: none;
+                    background-color: transparent;
+                    padding: calc(var(--base-space, 8px) * 1.5) calc(var(--base-space, 8px) * 2);
+                }
+
+                .af {
+                    border: 2px solid yellow;
+                    border-radius: 50%;
+                    height: 13px;
+                    -webkit-margin-end: 10px;
+                    margin-inline-end: 10px;
+                    position: relative;
+                    width: 13px;
+                }
+
+                &::before {
+                    display: block;
+                }
+
+                .aftext {
+                    position: relative;
+                    top: -0.1em;
+                    color: white;
+                }
+            }
+
+            .li2 {
+                display: none;
+
+                .skip {
+                    font-family: "s4";
+                    font-weight: 700;
+                    color: inherit;
+                    display: block;
+                    font-size: 1rem;
+                    height: 0;
+                    overflow: hidden;
+                    text-underline-offset: 2px;
+                    width: 0;
+                }
+            }
+        }
+
+        .navimg {
+            color: inherit;
+            height: 100px;
+            position: absolute;
+            right: 0;
+            z-index: 101;
+            img {
+                height: 100%;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        
+    }
+.menu {
+            background-color: #000;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+
+            button {
+                margin: 0 1rem;
+                z-index: 1;
+            }
+
+            .opne {
+                z-index: 1;
+            }
+
+            .close {
+                transition: .5s ease-in-out;
+                display: none;
+                z-index: 1;
+            }
+
+            nav {
+
+                //overflow: hidden;
+                margin: 0 auto;
+                display: none;
+
+
+                a {
+                    color: #fff;
+                    padding: 1rem 0;
+                }
+            }
+        }
+
+
+        &.active nav {
+            opacity: 1;
+            display: block;
+            background-color: #000;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: .5s ease-in-out;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &.active .opne {
+            opacity: 0;
+            display: none;
+        }
+
+        &.active .close {
+            opacity: 1;
+            display: block;
+            z-index: 1;
+        }
+
+}

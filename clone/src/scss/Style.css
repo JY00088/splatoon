@@ -1,0 +1,166 @@
+@import "reset.css";
+@import "font.css";
+header {
+  width: 100%;
+  height: 70px;
+  flex-direction: column;
+  align-items: center;
+  color: wheat;
+}
+header .gone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ac000d;
+  height: 60px;
+  background-color: #e60012;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: sticky;
+}
+header .gone .logoimg a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+header .gone .logoimg a .logo {
+  display: block;
+  width: 97px;
+  height: 24px;
+}
+header .gone .loginimg svg {
+  color: white;
+  width: 17px;
+  height: 19px;
+  margin-bottom: 0;
+  margin-right: 9px;
+}
+header .gone .loginimg .login {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  transform: translateY(-1px);
+}
+header .here {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  width: 100%;
+  z-index: 100;
+}
+header .here .motion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+header .here .motion .li1 {
+  list-style: none;
+}
+header .here .motion .li1 .afbtn {
+  font-family: "s4";
+  font-weight: 700;
+  align-items: center;
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 1;
+  border: none;
+  background-color: transparent;
+  padding: calc(var(--base-space, 8px) * 1.5) calc(var(--base-space, 8px) * 2);
+}
+header .here .motion .li1 .af {
+  border: 2px solid yellow;
+  border-radius: 50%;
+  height: 13px;
+  -webkit-margin-end: 10px;
+  margin-inline-end: 10px;
+  position: relative;
+  width: 13px;
+}
+header .here .motion .li1::before {
+  display: block;
+}
+header .here .motion .li1 .aftext {
+  position: relative;
+  top: -0.1em;
+  color: white;
+}
+header .here .motion .li2 {
+  display: none;
+}
+header .here .motion .li2 .skip {
+  font-family: "s4";
+  font-weight: 700;
+  color: inherit;
+  display: block;
+  font-size: 1rem;
+  height: 0;
+  overflow: hidden;
+  text-underline-offset: 2px;
+  width: 0;
+}
+header .here .navimg {
+  color: inherit;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  z-index: 101;
+}
+header .here .navimg img {
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+header .menu {
+  background-color: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header .menu button {
+  margin: 0 1rem;
+  z-index: 1;
+}
+header .menu .opne {
+  z-index: 1;
+}
+header .menu .close {
+  transition: 0.5s ease-in-out;
+  display: none;
+  z-index: 1;
+}
+header .menu nav {
+  margin: 0 auto;
+  display: none;
+}
+header .menu nav a {
+  color: #fff;
+  padding: 1rem 0;
+}
+header.active nav {
+  opacity: 1;
+  display: block;
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+header.active .opne {
+  opacity: 0;
+  display: none;
+}
+header.active .close {
+  opacity: 1;
+  display: block;
+  z-index: 1;
+}/*# sourceMappingURL=Style.css.map */
