@@ -1,12 +1,22 @@
-import { useRef, useState } from 'react'
-import { Route, useParams } from 'react-router-dom'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { Route, useParams, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import '../scss/Home.scss';
+import { Context } from "../Mycontext";
+
+
+
+    
 
 const Home = () => {
+    const {setState} = useContext(Context)
     let { page } = useParams();
     <Route path='/:page'></Route>;
+    useEffect(()=>{
+        setState(true)
+    },[])
     return (
         <>
             <section>{page}</section>
@@ -84,7 +94,65 @@ const Home = () => {
                             <div className='banner02'></div>
                         </div>
                     </div>
+                </div>
 
+                <div className="maintool">
+                    <div className="List01">
+                        <section className="Lvideo01">
+                            <article className="Ltool01">
+                                <div className="element01"></div>
+                                <div className="element02"></div>
+                                <div className="element03">
+                                    <div className="titlebanner">
+                                        <h2>Watch the trailer</h2>
+                                    </div>
+                                    <div className="inview">
+                                        <button>
+                                            <div className="buton">
+                                                <div className="one"></div>
+                                                <Link to="/trailer">
+                                                <div className="plays"><FontAwesomeIcon icon={faPlay} size="10x" /> </div>
+                                                </Link>
+                                            </div>
+                                            <picture>
+                                            <source srcSet="/img/home/video-trailer.webp" type="imge/webp" width="748" height="421" />
+                                            <source srcSet="/img/home/video-trailer.jpg" type="imge/jpg" width="748" height="421" />
+                                            <img className="videot" src="/img/home/video-trailer.jpg" />
+                                        </picture>
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </article>
+                            <article className="Ltool02">
+                                <div className="element04" ></div>
+                                <div className="element05"></div>
+                                <div className="elemenst06">
+                                    <picture>
+                                        <source srcSet='/img/home/graffiti-1.webp' type='image/webp'width="642" height="561.5" />
+                                        <source srcSet='/img/home/graffiti-1.png' type='image/png'width="642" height="561.5" />
+                                        <img src='/img/home/graffiti-1.png' />
+                                    </picture>
+                                </div>
+                                <div className="element07">
+                                    <div className="bo07">
+                                        <h2>Ink up the
+                                            <span>Splatlands</span>
+                                        </h2>
+                                        <div></div>
+                                        <span></span>
+                                    </div>
+                                    
+                                </div>
+                                <div className="element08"></div>
+                            </article>
+                        </section>
+                    </div>
+
+
+                    <div className="List02"></div>
+                    <div className="List03"></div>
+                    <div className="List04"></div>
                 </div>
             </div>
 

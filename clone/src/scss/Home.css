@@ -1,8 +1,5 @@
 @import "reset.css";
 @import "font.css";
-#main-content {
-  overflow: hidden;
-}
 #main-content .headerbox {
   position: relative;
   z-index: 2;
@@ -118,6 +115,133 @@
   top: -20px;
 }
 #main-content .headerbox .groupback .headerbanner .banner01 {
-  height: 120px;
+  height: 110px;
   background-image: url("../../public/img/home/banner-design1-medium-up.png");
+  transform: rotate(1deg);
+  transform-origin: 90% 50%;
+  z-index: 2;
+}
+#main-content .headerbox .groupback .headerbanner .banner02 {
+  top: 70px;
+  height: 110px;
+  background-image: url("../../public/img/home/banner-green-medium-up.png");
+  transform: rotate(-1deg);
+  transform-origin: 90% 50%;
+  z-index: 2;
+}
+#main-content .maintool {
+  position: relative;
+  top: -280px;
+}
+#main-content .maintool .List01 {
+  padding-bottom: 500px;
+  background-position: top;
+  background-image: url(../../public/img/home/camo-black.png);
+}
+#main-content .maintool .List01 .Lvideo01 {
+  z-index: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 {
+  position: relative;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10% 0 calc(var(8px, 8px) * 6) 0;
+  position: relative;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner {
+  background: #ff505e;
+  display: inline-block;
+  transform: rotate(-4deg);
+  z-index: 4;
+  text-align: center;
+  line-height: 1;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner h2 {
+  font-family: "s4";
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 16px 40px 24px;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner::before {
+  content: "";
+  background-position: 100%;
+  left: -61px;
+  width: 62px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  position: absolute;
+  background-image: url(../../public/img//home/left-tape-red.svg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner::after {
+  content: "";
+  background-position: 0;
+  right: -58px;
+  top: 0;
+  width: 59px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  position: absolute;
+  background-image: url(../../public/img//home/right-tape-red.svg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button {
+  z-index: 3;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  padding: 0;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton {
+  bottom: 0;
+  left: 50%;
+  margin: 10% 0 auto;
+  top: 0;
+  color: rgba(41, 41, 41, 0.3176470588);
+  transform: translate(-50%, -10%);
+  width: 40%;
+  z-index: 10;
+  position: absolute;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton .one {
+  border-radius: 100px;
+  height: 270px;
+  background: rgba(0, 0, 0, 0.6901960784);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton .plays {
+  position: absolute;
+  top: 70px;
+  left: 110px;
+  color: #6af7ce;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element06 picture {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 {
+  z-index: 2;
+  font-family: "s1";
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 h2 {
+  white-space: pre-wrap;
+  left: 15em;
+  top: 42em;
+  margin: auto;
+  position: absolute;
+  transform: rotate(-5deg);
+  color: #ff9750;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 h2 span {
+  display: block;
+  color: white;
+  font-size: 5rem;
+  text-transform: uppercase;
 }/*# sourceMappingURL=Home.css.map */

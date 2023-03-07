@@ -1,0 +1,36 @@
+@import "reset.css";
+@import "font.css";
+.trailervideo {
+  width: 100%;
+  height: 100%;
+}
+.trailervideo .traback {
+  width: 100%;
+  height: 50%;
+}
+.trailervideo .traback img {
+  width: 100%;
+  height: 1010px;
+}
+.trailervideo .trameun {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: yellowgreen;
+  width: 70px;
+  height: 70px;
+}
+.trailervideo .trameun img {
+  width: 25px;
+  color: #603bff;
+}
+.trailervideo .videomodal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.trailervideo .videomodal .player {
+  width: 800px;
+  height: 900px;
+}/*# sourceMappingURL=trailer.css.map */

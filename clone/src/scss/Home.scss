@@ -4,7 +4,7 @@
 
 
 #main-content {
-    overflow: hidden;
+    //overflow: hidden;
 
     .headerbox {
         position: relative;
@@ -135,9 +135,8 @@
                 position: absolute;
                 right: 0;
                 top: 80px;
-                .stagger {
-                    
-                }
+
+                .stagger {}
 
                 .view {
 
@@ -155,20 +154,20 @@
                     position: relative;
                     right: -120px;
                     top: 0;
-                    
+
 
                     picture {
                         .tape1 {}
                     }
-                    a{
+
+                    a {
                         position: absolute;
                         left: 90px;
                         top: -16px;
-                        .aip{
-                            
-                        }
 
-                        .drip{
+                        .aip {}
+
+                        .drip {
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -178,7 +177,7 @@
                             border-radius: 8px;
                             background: yellow;
                             font-family: "s2";
-                            font-weight: 700; 
+                            font-weight: 700;
                         }
                     }
 
@@ -188,15 +187,191 @@
             .headerbanner {
                 position: relative;
                 top: -20px;
-                .banner01{
-                    height: 120px;
+
+                .banner01 {
+                    height: 110px;
                     background-image: url("../../public/img/home/banner-design1-medium-up.png");
+                    transform: rotate(1deg);
+                    transform-origin: 90% 50%;
+                    z-index: 2;
                 }
-                .banner02{}
+
+                .banner02 {
+                    top: 70px;
+                    height: 110px;
+                    background-image: url("../../public/img/home/banner-green-medium-up.png");
+                    transform: rotate(-1deg);
+                    transform-origin: 90% 50%;
+                    z-index: 2;
+                }
             }
         }
 
-
-
     }
+
+    .maintool {
+        position: relative;
+        top: -280px;
+        
+        .List01 {
+            padding-bottom:500px ;
+            background-position: top;
+            //height: 100px;
+            background-image: url(../../public/img/home/camo-black.png);
+
+            .Lvideo01 {
+                z-index: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .Ltool01 {
+                    position: relative;
+
+
+                    .element01 {}
+
+                    .element02 {}
+
+                    .element03 {
+                        //margin: -5%;
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        margin: 10% 0 calc(var(8px, 8px)*6)0;
+                        position: relative;
+
+                        .titlebanner {
+                            background: #ff505e;
+                            display: inline-block;
+                            transform: rotate(-4deg);
+                            z-index: 4;
+                            text-align: center;
+                            line-height: 1;
+
+                            h2 {
+                                font-family: "s4";
+                                font-weight: 700;
+                                font-size: 2rem;
+                                padding: 16px 40px 24px;
+                            }
+
+                            &::before {
+                                content: "";
+                                background-position: 100%;
+                                left: -61px;
+                                width: 62px;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                height: 100%;
+                                position: absolute;
+                                background-image: url(../../public/img//home/left-tape-red.svg);
+                            }
+
+                            &::after {
+                                content: "";
+                                background-position: 0;
+                                right: -58px;
+                                top: 0;
+                                width: 59px;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                height: 100%;
+                                position: absolute;
+                                background-image: url(../../public/img//home/right-tape-red.svg);
+                            }
+                        }
+
+                        .inview {
+                            button {
+                                z-index: 3;
+                                position: relative;
+                                cursor: pointer;
+                                border: none;
+
+                                display: inline-block;
+                                padding: 0;
+
+                                .buton {
+                                    bottom: 0;
+                                    left: 50%;
+                                    margin: 10% 0 auto;
+                                    top: 0;
+                                    color: #29292951;
+                                    transform: translate(-50%, -10%);
+                                    width: 40%;
+                                    z-index: 10;
+                                    position: absolute;
+
+                                    .one {
+                                        border-radius: 100px;
+                                        height: 270px;
+                                        background: #000000b0;
+                                    }
+
+                                    .plays {
+                                        position: absolute;
+                                        top: 70px;
+                                        left: 110px;
+                                        color: #6af7ce;
+                                    }
+                                }
+
+
+                                picture {
+                                    .videot {}
+                                }
+                            }
+
+
+
+                        }
+
+                    }
+                }
+
+                .Ltool02 {
+                    
+
+                    .element04 {}
+
+                    .element05 {}
+
+                    .element06 {
+                        picture{
+                            position: absolute;
+                            right: 0%;
+                            top: 50%;
+                        }
+                    }
+
+                    .element07 {
+                        .bo07{
+                            z-index: 2;
+                            font-family: "s1";
+
+                            h2{
+                                white-space: pre-wrap;
+                                left: 15em;
+                                top: 42em;
+                                margin: auto;
+                                position: absolute;
+                                transform: rotate(-5deg);
+                                color: #ff9750;
+                                span{
+                                    display: block;
+                                    color: white;
+                                    font-size: 5rem;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+
+                    .element08 {}
+                }
+            }
+        }
+    }
+
 }

@@ -1,16 +1,19 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { Link, BrowserRouter, Route, Routes } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Context } from "../Mycontext";
 
 
 const Header = () => {
+    const {state} = useContext(Context)
     let elBtn = useRef();
+    console.log(state)
 
     let navFn = function () {
         elBtn.current.classList.toggle('active');
     };
-
+    if(!state) return<></>
     return (
         <header ref={elBtn}>
             <div className="gridbox">

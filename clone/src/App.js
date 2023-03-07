@@ -3,17 +3,23 @@ import { Link, BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './page/Home';
 import './scss/Style.scss'
 import Header from "./page/Header";
+import Trailer from "./page/Trailer";
+import Mycontext from "./Mycontext";
 
 function App() {
   
   return (
     <BrowserRouter>
+    <Mycontext>
       <Header />
       <main>
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/trailer" element={<Trailer />}></Route>
         </Routes>
+        
       </main>
+      </Mycontext>
     </BrowserRouter>
 
   );
