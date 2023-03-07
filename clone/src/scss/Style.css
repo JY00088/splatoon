@@ -7,7 +7,12 @@ header {
   align-items: center;
   color: wheat;
 }
-header .gone {
+header .gridbox {
+  width: 100%;
+  z-index: 100;
+  position: relative;
+}
+header .gridbox .gone {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,49 +21,56 @@ header .gone {
   background-color: #e60012;
   padding-left: 30px;
   padding-right: 30px;
-  position: sticky;
 }
-header .gone .logoimg a {
+header .gridbox .gone .logoimg a {
   cursor: pointer;
   text-decoration: underline;
 }
-header .gone .logoimg a .logo {
+header .gridbox .gone .logoimg a .logo {
   display: block;
   width: 97px;
   height: 24px;
 }
-header .gone .loginimg svg {
+header .gridbox .gone .loginimg svg {
   color: white;
   width: 17px;
   height: 19px;
   margin-bottom: 0;
   margin-right: 9px;
 }
-header .gone .loginimg .login {
+header .gridbox .gone .loginimg .login {
   font-size: 14px;
   font-weight: 700;
   color: #fff;
   transform: translateY(-1px);
 }
-header .here {
-  position: fixed;
-  right: 0;
-  top: 0;
-  background-color: #000;
+header .gridbox .stixkbox {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  min-height: 100vh;
+}
+header .gridbox .stixkbox .here {
   width: 100%;
+  position: sticky;
+  display: grid;
+  background-color: #000;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  text-align: center;
+  top: 0;
   z-index: 100;
 }
-header .here .motion {
+header .gridbox .stixkbox .here .motion {
   align-items: center;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
 }
-header .here .motion .li1 {
+header .gridbox .stixkbox .here .motion .li1 {
   list-style: none;
 }
-header .here .motion .li1 .afbtn {
+header .gridbox .stixkbox .here .motion .li1 .afbtn {
   font-family: "s4";
   font-weight: 700;
   align-items: center;
@@ -69,7 +81,7 @@ header .here .motion .li1 .afbtn {
   background-color: transparent;
   padding: calc(var(--base-space, 8px) * 1.5) calc(var(--base-space, 8px) * 2);
 }
-header .here .motion .li1 .af {
+header .gridbox .stixkbox .here .motion .li1 .af {
   border: 2px solid yellow;
   border-radius: 50%;
   height: 13px;
@@ -78,18 +90,18 @@ header .here .motion .li1 .af {
   position: relative;
   width: 13px;
 }
-header .here .motion .li1::before {
+header .gridbox .stixkbox .here .motion .li1::before {
   display: block;
 }
-header .here .motion .li1 .aftext {
+header .gridbox .stixkbox .here .motion .li1 .aftext {
   position: relative;
   top: -0.1em;
   color: white;
 }
-header .here .motion .li2 {
+header .gridbox .stixkbox .here .motion .li2 {
   display: none;
 }
-header .here .motion .li2 .skip {
+header .gridbox .stixkbox .here .motion .li2 .skip {
   font-family: "s4";
   font-weight: 700;
   color: inherit;
@@ -100,48 +112,46 @@ header .here .motion .li2 .skip {
   text-underline-offset: 2px;
   width: 0;
 }
-header .here .navimg {
+header .gridbox .stixkbox .here .navimg {
   color: inherit;
   height: 100px;
   position: absolute;
   right: 0;
+  top: 0;
   z-index: 101;
 }
-header .here .navimg img {
+header .gridbox .stixkbox .here .navimg img {
   height: 100%;
   max-width: 100%;
   width: 100%;
 }
-header .menu {
-  background-color: #000;
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
+header .gridbox .stixkbox .here .menu {
   align-items: center;
+  display: flex;
   position: relative;
+  z-index: 1;
 }
-header .menu button {
+header .gridbox .stixkbox .here .menu button {
   margin: 0 1rem;
   z-index: 1;
 }
-header .menu .opne {
+header .gridbox .stixkbox .here .menu .opne {
   z-index: 1;
 }
-header .menu .close {
+header .gridbox .stixkbox .here .menu .close {
   transition: 0.5s ease-in-out;
   display: none;
   z-index: 1;
 }
-header .menu nav {
+header .gridbox .stixkbox .here .menu nav {
   margin: 0 auto;
   display: none;
 }
-header .menu nav a {
+header .gridbox .stixkbox .here .menu nav a {
   color: #fff;
   padding: 1rem 0;
 }
-header.active nav {
+header .gridbox .stixkbox .here.active nav {
   opacity: 1;
   display: block;
   background-color: #000;
@@ -155,11 +165,11 @@ header.active nav {
   left: 0;
   top: 0;
 }
-header.active .opne {
+header .gridbox .stixkbox .here.active .opne {
   opacity: 0;
   display: none;
 }
-header.active .close {
+header .gridbox .stixkbox .here.active .close {
   opacity: 1;
   display: block;
   z-index: 1;
