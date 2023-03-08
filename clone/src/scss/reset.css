@@ -40,7 +40,9 @@ ol, ul {
 div{
 	display: block;
 }
-
+a{
+	text-decoration: none;
+}
 blockquote, q {
 	quotes: none;
 }

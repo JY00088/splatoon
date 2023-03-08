@@ -131,12 +131,13 @@
 }
 #main-content .maintool {
   position: relative;
-  top: -280px;
+  top: -170px;
+  height: 500vh;
 }
 #main-content .maintool .List01 {
-  padding-bottom: 500px;
+  height: 100%;
   background-position: top;
-  background-image: url(../../public/img/home/camo-black.png);
+  background-image: url("../../public/img/home/tapes-black.jpg");
 }
 #main-content .maintool .List01 .Lvideo01 {
   z-index: auto;
@@ -223,25 +224,195 @@
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 .element06 picture {
   position: absolute;
-  right: 0%;
-  top: 50%;
+  right: 0;
+  top: 30em;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 {
+  width: 100%;
+  left: 0;
+  top: 42em;
+  position: absolute;
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 {
+  position: absolute;
   z-index: 2;
   font-family: "s1";
+  width: 530px;
+  height: 255px;
+  background-color: black;
+  left: 25em;
+  top: 5em;
+  padding: 2em;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07::before {
+  background-repeat: repeat-y;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  width: 40px;
+  z-index: -1;
+  background-image: url("../../public/img/home/left-black-tape-container.svg");
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07::after {
+  background-repeat: repeat-y;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 33em;
+  width: 40px;
+  z-index: -1;
+  background-image: url("../../public/img/home/right-black-tape-container.svg");
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 h2 {
   white-space: pre-wrap;
-  left: 15em;
-  top: 42em;
+  left: 1em;
+  top: -2.2em;
   margin: auto;
   position: absolute;
   transform: rotate(-5deg);
   color: #ff9750;
+  z-index: 1;
+  font-size: 50px;
+  text-align: center;
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 h2 span {
   display: block;
   color: white;
-  font-size: 5rem;
+  font-size: 80px;
   text-transform: uppercase;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 p {
+  font-family: "s2";
+  font-size: 23px;
+  color: white;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink {
+  font-family: "s2";
+  font-weight: 700;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 10rem;
+  left: 6.2rem;
+  background: #af50ff;
+  width: 350px;
+  height: 60px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 1em;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink a {
+  color: black;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element08 {
+  position: absolute;
+  right: 22em;
+  top: 40em;
+  transform: rotate(5deg);
+}
+#main-content .maintool .List01 .Lvideo02 .back02 {
+  position: absolute;
+  right: 17em;
+  top: 90em;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 {
+  position: absolute;
+  top: 82em;
+  left: 14em;
+  transform: rotate(-4deg);
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 .bluemo {
+  position: absolute;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 h2 {
+  position: absolute;
+  left: 4em;
+  top: 3.3em;
+  width: 520px;
+  color: white;
+  font-weight: 800;
+  font-family: "s2";
+  font-size: 35px;
+  text-align: center;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 video {
+  position: absolute;
+  top: 13em;
+  left: 12.5em;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 .noLink02 a {
+  color: black;
+  font-family: "s2";
+  font-weight: 700;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 29rem;
+  left: 19.2rem;
+  background: #eaff3d;
+  width: 200px;
+  height: 70px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 1em;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 {
+  position: absolute;
+  top: 70em;
+  right: 62em;
+  transform: rotate(4deg);
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 .reamonmo {
+  position: absolute;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 .reamonmo .st02 {
+  fill: #eaff3d;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 h2 {
+  position: absolute;
+  right: -41rem;
+  top: 3.3em;
+  width: 520px;
+  color: white;
+  font-weight: 800;
+  font-family: "s2";
+  font-size: 35px;
+  text-align: center;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 video {
+  position: absolute;
+  top: 14em;
+  right: -38em;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 .noLink03 a {
+  color: white;
+  font-family: "s2";
+  font-weight: 700;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 29rem;
+  right: -32rem;
+  background: #603bff;
+  width: 200px;
+  height: 70px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 1em;
+}
+#main-content .maintool .List01 .Lvideo03 .banerover {
+  position: relative;
+  top: 90rem;
+}
+#main-content .maintool .List01 .Lvideo03 .banerover .banerover01 {
+  height: 110px;
+  background-image: url("../../public/img/home/banner-design2-medium-up-2x.png");
+  transform: rotate(0.8deg);
+  transform-origin: 90% 50%;
+}
+#main-content .maintool .List01 .Lvideo03 .banerover .banerover02 {
+  height: 110px;
+  background-image: url("../../public/img/home/banner-green-medium-up-2x.png");
+  transform: rotate(-1deg);
+  transform-origin: 10% 50%;
 }/*# sourceMappingURL=Home.css.map */

@@ -45,11 +45,11 @@ header .gridbox .gone .loginimg .login {
   transform: translateY(-1px);
 }
 header .gridbox .stixkbox {
-  display: grid;
-  grid-template-rows: auto auto auto 1fr auto;
-  min-height: 100vh;
+  min-height: 200vh;
 }
 header .gridbox .stixkbox .here {
+  grid-template-rows: auto auto auto 1fr auto;
+  position: relative;
   width: 100%;
   position: sticky;
   display: grid;

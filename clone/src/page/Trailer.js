@@ -29,7 +29,6 @@ const Trailer = () => {
                     <ReactPlayer
                         className="player"
                         url={"https://www.youtube.com/watch?v=ZvqGGzIOsfc"}
-                        
                         playing={true}
                         muted={true}
                         controls={true}

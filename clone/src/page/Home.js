@@ -5,18 +5,20 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import '../scss/Home.scss';
 import { Context } from "../Mycontext";
+import { ReactComponent as Colorbox } from "../imgs/box.svg";
+import { ReactComponent as Colorbox2 } from "../imgs/box2.svg";
 
 
 
-    
+
 
 const Home = () => {
-    const {setState} = useContext(Context)
+    const { setState } = useContext(Context)
     let { page } = useParams();
     <Route path='/:page'></Route>;
-    useEffect(()=>{
+    useEffect(() => {
         setState(true)
-    },[])
+    }, [])
     return (
         <>
             <section>{page}</section>
@@ -111,26 +113,26 @@ const Home = () => {
                                             <div className="buton">
                                                 <div className="one"></div>
                                                 <Link to="/trailer">
-                                                <div className="plays"><FontAwesomeIcon icon={faPlay} size="10x" /> </div>
+                                                    <div className="plays"><FontAwesomeIcon icon={faPlay} size="10x" /> </div>
                                                 </Link>
                                             </div>
                                             <picture>
-                                            <source srcSet="/img/home/video-trailer.webp" type="imge/webp" width="748" height="421" />
-                                            <source srcSet="/img/home/video-trailer.jpg" type="imge/jpg" width="748" height="421" />
-                                            <img className="videot" src="/img/home/video-trailer.jpg" />
-                                        </picture>
+                                                <source srcSet="/img/home/video-trailer.webp" type="imge/webp" width="748" height="421" />
+                                                <source srcSet="/img/home/video-trailer.jpg" type="imge/jpg" width="748" height="421" />
+                                                <img className="videot" src="/img/home/video-trailer.jpg" />
+                                            </picture>
                                         </button>
-                                        
+
                                     </div>
                                 </div>
                             </article>
                             <article className="Ltool02">
                                 <div className="element04" ></div>
                                 <div className="element05"></div>
-                                <div className="elemenst06">
+                                <div className="element06">
                                     <picture>
-                                        <source srcSet='/img/home/graffiti-1.webp' type='image/webp'width="642" height="561.5" />
-                                        <source srcSet='/img/home/graffiti-1.png' type='image/png'width="642" height="561.5" />
+                                        <source srcSet='/img/home/graffiti-1.webp' type='image/webp' width="642" height="561.5" />
+                                        <source srcSet='/img/home/graffiti-1.png' type='image/png' width="642" height="561.5" />
                                         <img src='/img/home/graffiti-1.png' />
                                     </picture>
                                 </div>
@@ -139,13 +141,63 @@ const Home = () => {
                                         <h2>Ink up the
                                             <span>Splatlands</span>
                                         </h2>
-                                        <div></div>
-                                        <span></span>
+                                        <p>
+                                            Enter a sun-scorched desert inhabited by battle-hardened Inklings and Octolings. Ink, dive, swim, and splat your way to the top!
+                                        </p>
+                                        <span className='noLink'>
+                                            <Link to="/">Welcome to Splatsvlle <FontAwesomeIcon icon={faChevronRight} /> </Link>
+                                        </span>
                                     </div>
-                                    
+
                                 </div>
-                                <div className="element08"></div>
+                                <div className="element08">
+                                    <picture>
+                                        <source srcSet='/img/home/s3-home-intro-blade.webp' type='image/webp' width="558" height="313.5" />
+                                        <source srcSet='/img/home/s3-home-intro-blade.jpg' type='image/jpg' width="558" height="313.5" />
+                                        <img className='imgs3' src='/img/home/s3-home-intro-blade.jpg' />
+                                    </picture>
+                                </div>
                             </article>
+                        </section>
+
+                        <section className='Lvideo02'>
+                            <div className='back02'>
+                                <picture>
+                                <img className='backs02' src='/img/home/graffiti-2.png' />
+                                </picture>
+                            </div>
+                            <div className='colorbox01'>
+                                <div className='bluebox'>
+                                    <Colorbox className='bluemo' width="800px" height="650px" />
+                                    <h2>How to play, game modes, and all that</h2>
+                                    <video muted autoPlay loop>
+                                        <source src="/img/home/video/s3_howtoplay_turfwar.mp4" type="video/mp4" />
+                                    </video>
+                                    <span className='noLink02'><a href='#'>Dive in </a> </span>
+                                </div>
+
+                            </div>
+                            <div className='colorbox02'>
+                                <div className='reamonbox'>
+                                    <Colorbox2 className='reamonmo' width="800px" height="650px" />
+                                    <h2>Make a splash with the latest weapons and gear</h2>
+                                    <video muted autoPlay loop>
+                                        <source src="/img/home/video/s3_weapons_headervideo.mp4" type="video/mp4" />
+                                    </video>
+                                    <span className='noLink03'><a href='#'>Fit check</a></span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className='Lvideo03'>
+                            <div className='banerover'>
+                                <div className='banerover01'></div>
+                                <div className='banerover02'></div>
+                            </div>
+                            <div className='rownews'></div>
+                            <div className='row'></div>
+                            <div className='rowimg'></div>
+                            <div className='rowbar'></div>
                         </section>
                     </div>
 
