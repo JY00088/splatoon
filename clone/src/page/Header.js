@@ -60,6 +60,9 @@ const Header = () => {
             </a>
 
             <div className="menu">
+              <div className="wavebtn">
+                <div id="shape"></div>
+              </div>
               <a className="menu-trigger" onClick={navFn}>
                 <span></span>
                 <span></span>
