@@ -19,7 +19,7 @@ body {
             position: relative;
             width: 100%;
             margin: 0 auto;
-            height: 100vh;
+            height: 100%;
 
             .groupback ::before {
                 content: "";
@@ -27,14 +27,13 @@ body {
             }
 
             .backpage {
-                width: 100%;
                 opacity: 1;
 
                 picture {
-                    max-width: 100%;
 
                     .backimg {
-                        width: 1947px;
+                        width: 100%;
+                        height: 100%;
                     }
                 }
 
@@ -43,12 +42,12 @@ body {
             .calamarimotion01 {
                 //opacity: 1;
                 position: absolute;
-                left: 1002px;
-                top: 508px;
+                right: 15rem;
+                bottom: 13rem;
 
                 picture {
                     .motion01 {
-                        width: 416px;
+                        width: 360px;
                         max-width: 100%;
                         height: auto;
                     }
@@ -58,12 +57,13 @@ body {
             .calamarimotion02 {
                 //opacity: 1;
                 position: absolute;
-                left: 64px;
-                top: 339px;
+                left: 10rem;
+                top: 20rem;
 
                 picture {
+
                     .motion02 {
-                        width: 282px;
+                        width: 230px;
                         max-width: 100%;
                         height: auto;
                     }
@@ -74,12 +74,12 @@ body {
             .calamarimotion03 {
                 //opacity: 1;
                 position: absolute;
-                left: 552px;
-                top: 500px;
+                left: 24rem;
+                bottom: 15rem;
 
                 picture {
                     .motion03 {
-                        width: 323px;
+                        width: 250px;
                         max-width: 100%;
                         height: auto;
                     }
@@ -89,12 +89,12 @@ body {
             .calamarimotion04 {
                 //opacity: 1;
                 position: absolute;
-                left: 256px;
-                top: 91px;
+                left: -20rem;
+                bottom: 10rem;
 
                 picture {
                     .motion04 {
-                        width: 1193px;
+                        width: 1000px;
                         max-width: 100%;
                         height: auto;
                     }
@@ -104,8 +104,8 @@ body {
             .calamarimotion05 {
                 opacity: 1;
                 position: absolute;
-                left: -48px;
-                top: 80px;
+                left: -50rem;
+                top: 8rem;
 
                 picture {
                     .motion05 {
@@ -121,6 +121,7 @@ body {
                 position: absolute;
                 right: 0;
                 top: 80px;
+                pointer-events: fill;
 
                 .stagger {}
 
@@ -153,7 +154,44 @@ body {
 
                         .aip {}
 
-                        .drip {
+
+                        .wrapper {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-flow: wrap;
+
+                            button {
+                                flex: 1;
+                                padding: 15px 40px;
+                                border-radius: 15px;
+                                font-family: "s4";
+                                font-size: 20px;
+                                border: none;
+                                white-space: nowrap;
+                                color: black;
+                                background: #eaff3d;
+                                background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                background-repeat: repeat-x;
+                                background-position: 0 -100%;
+                                transition: 1.5s ease;
+                                filter: hue-rotate(10deg);
+
+                                &:hover {
+                                    background-position: 500% 100%;
+                                }
+
+                                // @for $i from 1 through 18 {
+                                //     &:nth-child(#{$i}) {
+                                //         filter: hue-rotate(($i * 20) + deg);
+                                //     }
+                                // }
+                            }
+                        }
+
+
+
+                        /* .drip {
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -164,7 +202,7 @@ body {
                             background: yellow;
                             font-family: "s2";
                             font-weight: 700;
-                        }
+                        } */
                     }
 
                 }
@@ -172,13 +210,13 @@ body {
 
             .headerbanner {
                 position: relative;
-                top: -20px;
+                top: -8px;
 
                 .banner01 {
                     height: 110px;
                     background-image: url("../../public/img/home/banner-design1-medium-up.png");
                     transform: rotate(1deg);
-                    transform-origin: 90% 50%;
+                    transform-origin: 80% 50%;
                     z-index: 2;
                 }
 
@@ -187,7 +225,7 @@ body {
                     height: 110px;
                     background-image: url("../../public/img/home/banner-green-medium-up.png");
                     transform: rotate(-1deg);
-                    transform-origin: 90% 50%;
+                    transform-origin: -50% 50%;
                     z-index: 2;
                 }
             }
@@ -311,15 +349,40 @@ body {
                                     position: absolute;
 
                                     .one {
-                                        border-radius: 100px;
+                                        border-radius: 70% 30% 72% 28% / 27% 61% 39% 73%;
+                                        width: 270px;
                                         height: 270px;
                                         background: #000000b0;
+                                        animation: wave 8s ease-in-out infinite;
+                                        position: absolute;
+                                        top: 0;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+
+                                    @keyframes wave {
+                                        100% {
+                                            border-radius: 70% 30% 72% 28% / 27% 61% 39% 73%;
+                                        }
+
+                                        50% {
+                                            border-radius: 77% 23% 54% 46% / 40% 38% 62% 60%;
+                                        }
+
+                                        25% {
+                                            border-radius: 80% 27% 60% 36% / 32% 44% 52% 50%;
+                                        }
+
+                                        0% {
+                                            border-radius: 70% 30% 72% 28% / 27% 61% 39% 73%;
+                                        }
                                     }
 
                                     .plays {
                                         position: absolute;
-                                        top: 70px;
-                                        left: 110px;
+                                        top: 67px;
+                                        left: 97px;
                                         color: #6af7ce;
                                     }
                                 }
@@ -433,6 +496,25 @@ body {
                                 border-radius: 15px;
                                 text-align: center;
                                 padding: 1em;
+                                border: none;
+                                white-space: nowrap;
+                                color: black;
+                                background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                background-repeat: repeat-x;
+                                background-position: 0 -100%;
+                                transition: 1.5s ease;
+                                filter: hue-rotate(10deg);
+
+                                &:hover {
+                                    background-position: 500% 100%;
+                                }
+
+                                @for $i from 1 through 18 {
+                                    &:nth-child(#{$i}) {
+                                        filter: hue-rotate(($i * 20) + deg);
+                                    }
+                                }
+
 
                                 a {
                                     color: black;
@@ -509,23 +591,42 @@ body {
                     }
 
                     .noLink02 {
+                        font-family: "s2";
+                        font-weight: 700;
+                        font-size: 1.4rem;
+                        position: absolute;
+                        top: 29rem;
+                        left: 19.2rem;
+                        background: #eaff3d;
+                        width: 200px;
+                        height: 70px;
+                        border-radius: 15px;
+                        text-align: center;
+                        padding: 1em;
+                        white-space: nowrap;
+                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                        background-repeat: repeat-x;
+                        background-position: 0 -100%;
+                        transition: 1.5s ease;
+                        filter: hue-rotate(10deg);
 
                         a {
                             color: black;
-                            font-family: "s2";
-                            font-weight: 700;
-                            font-size: 1.4rem;
-                            position: absolute;
-                            top: 29rem;
-                            left: 19.2rem;
-                            background: #eaff3d;
-                            width: 200px;
-                            height: 70px;
-                            border-radius: 15px;
-                            text-align: center;
-                            padding: 1em;
+                        }
+
+                        &:hover {
+                            a {
+                                color: white;
+                            }
+
+                            background-position: 500% 100%;
+                            border: 2px solid white;
                         }
                     }
+
+
+
+
                 }
 
                 .colorbox02 {
@@ -561,22 +662,41 @@ body {
                     }
 
                     .noLink03 {
+                        color: white;
+                        font-family: "s2";
+                        font-weight: 700;
+                        font-size: 1.4rem;
+                        position: absolute;
+                        top: 29rem;
+                        left: 19rem;
+                        background: #603bff;
+                        width: 200px;
+                        height: 70px;
+                        border-radius: 15px;
+                        text-align: center;
+                        padding: 1em;
+                        white-space: nowrap;
+                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                        background-repeat: repeat-x;
+                        background-position: 0 -100%;
+                        transition: 1.5s ease;
+                        filter: hue-rotate(10deg);
+
                         a {
                             color: white;
-                            font-family: "s2";
-                            font-weight: 700;
-                            font-size: 1.4rem;
-                            position: absolute;
-                            top: 29rem;
-                            left: 19rem;
-                            background: #603bff;
-                            width: 200px;
-                            height: 70px;
-                            border-radius: 15px;
-                            text-align: center;
-                            padding: 1em;
+                        }
+
+                        &:hover {
+                            a {
+                                color: black;
+                            }
+
+                            background-position: 500% 100%;
+                            border: 2px solid black;
                         }
                     }
+
+
                 }
             }
 
@@ -984,26 +1104,54 @@ body {
                             }
                         }
 
+
                         .twitter {
-                            padding-top: 30px;
+                            display: flex;
+                            align-items: center;
+                            background-color: #1da1f2;
+                            width: 320px;
+                            height: 50px;
+                            padding: 10px;
+                            border-radius: 5px;
+                            font-family: "s4";
+                            font-weight: 700;
+                            font-size: 20px;
+                            white-space: nowrap;
+                            background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                            background-repeat: repeat-x;
+                            background-position: 0 -100%;
+                            transition: 1.5s ease;
+                            //filter: hue-rotate(30deg);
 
                             .twitterbox {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                background-color: #1da1f2;
-                                width: 320px;
-                                height: 50px;
+                                width: 20px;
+                                display: inline-block;
                                 color: white;
-                                padding: 10px;
-                                border-radius: 5px;
-                                font-family: "s4";
-                                font-weight: 700;
-                                font-size: 20px;
+
+                                #tw {
+                                    fill: white;
+                                }
+
 
                                 .iconright {
                                     margin-left: 6px;
                                 }
+                            }
+
+                            &:hover {
+                                #tw {
+                                    fill: #1da1f2;
+                                }
+
+                                a {
+                                    color: #1da1f2;
+                                }
+
+                                background-color: white;
+                                filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 255, 255));
+                                //filter: hue-rotate(70deg);
+                                background-position: 500% 100%;
+                                border: 2px solid #1da1f2;
                             }
                         }
                     }

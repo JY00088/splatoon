@@ -13,67 +13,64 @@ body {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
 }
 #main-content .headerbox .groupback .groupback ::before {
   content: "";
   display: block;
 }
 #main-content .headerbox .groupback .backpage {
-  width: 100%;
   opacity: 1;
 }
-#main-content .headerbox .groupback .backpage picture {
-  max-width: 100%;
-}
 #main-content .headerbox .groupback .backpage picture .backimg {
-  width: 1947px;
+  width: 100%;
+  height: 100%;
 }
 #main-content .headerbox .groupback .calamarimotion01 {
   position: absolute;
-  left: 1002px;
-  top: 508px;
+  right: 15rem;
+  bottom: 13rem;
 }
 #main-content .headerbox .groupback .calamarimotion01 picture .motion01 {
-  width: 416px;
+  width: 360px;
   max-width: 100%;
   height: auto;
 }
 #main-content .headerbox .groupback .calamarimotion02 {
   position: absolute;
-  left: 64px;
-  top: 339px;
+  left: 10rem;
+  top: 20rem;
 }
 #main-content .headerbox .groupback .calamarimotion02 picture .motion02 {
-  width: 282px;
+  width: 230px;
   max-width: 100%;
   height: auto;
 }
 #main-content .headerbox .groupback .calamarimotion03 {
   position: absolute;
-  left: 552px;
-  top: 500px;
+  left: 24rem;
+  bottom: 15rem;
 }
 #main-content .headerbox .groupback .calamarimotion03 picture .motion03 {
-  width: 323px;
+  width: 250px;
   max-width: 100%;
   height: auto;
 }
 #main-content .headerbox .groupback .calamarimotion04 {
   position: absolute;
-  left: 256px;
-  top: 91px;
+  left: -20rem;
+  bottom: 10rem;
 }
 #main-content .headerbox .groupback .calamarimotion04 picture .motion04 {
-  width: 1193px;
+  width: 1000px;
   max-width: 100%;
   height: auto;
 }
 #main-content .headerbox .groupback .calamarimotion05 {
   opacity: 1;
   position: absolute;
-  left: -48px;
-  top: 80px;
+  left: -50rem;
+  top: 8rem;
 }
 #main-content .headerbox .groupback .calamarimotion05 picture .motion05 {
   width: 816px;
@@ -85,6 +82,7 @@ body {
   position: absolute;
   right: 0;
   top: 80px;
+  pointer-events: fill;
 }
 #main-content .headerbox .groupback .homelogo .view picture .pos {
   width: 560px;
@@ -99,28 +97,53 @@ body {
   position: absolute;
   left: 90px;
   top: -16px;
+  /* .drip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 140px;
+      height: 50px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      background: yellow;
+      font-family: "s2";
+      font-weight: 700;
+  } */
 }
-#main-content .headerbox .groupback .homelogo .relatext a .drip {
+#main-content .headerbox .groupback .homelogo .relatext a .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 140px;
-  height: 50px;
-  box-sizing: border-box;
-  border-radius: 8px;
-  background: yellow;
-  font-family: "s2";
-  font-weight: 700;
+  flex-flow: wrap;
+}
+#main-content .headerbox .groupback .homelogo .relatext a .wrapper button {
+  flex: 1;
+  padding: 15px 40px;
+  border-radius: 15px;
+  font-family: "s4";
+  font-size: 20px;
+  border: none;
+  white-space: nowrap;
+  color: black;
+  background: #eaff3d;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
+}
+#main-content .headerbox .groupback .homelogo .relatext a .wrapper button:hover {
+  background-position: 500% 100%;
 }
 #main-content .headerbox .groupback .headerbanner {
   position: relative;
-  top: -20px;
+  top: -8px;
 }
 #main-content .headerbox .groupback .headerbanner .banner01 {
   height: 110px;
   background-image: url("../../public/img/home/banner-design1-medium-up.png");
   transform: rotate(1deg);
-  transform-origin: 90% 50%;
+  transform-origin: 80% 50%;
   z-index: 2;
 }
 #main-content .headerbox .groupback .headerbanner .banner02 {
@@ -128,7 +151,7 @@ body {
   height: 110px;
   background-image: url("../../public/img/home/banner-green-medium-up.png");
   transform: rotate(-1deg);
-  transform-origin: 90% 50%;
+  transform-origin: -50% 50%;
   z-index: 2;
 }
 #main-content .maintool {
@@ -228,14 +251,50 @@ body {
   position: absolute;
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton .one {
-  border-radius: 100px;
+  border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+  width: 270px;
   height: 270px;
   background: rgba(0, 0, 0, 0.6901960784);
+  -webkit-animation: wave 8s ease-in-out infinite;
+          animation: wave 8s ease-in-out infinite;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@-webkit-keyframes wave {
+  100% {
+    border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+  }
+  50% {
+    border-radius: 77% 23% 54% 46%/40% 38% 62% 60%;
+  }
+  25% {
+    border-radius: 80% 27% 60% 36%/32% 44% 52% 50%;
+  }
+  0% {
+    border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+  }
+}
+@keyframes wave {
+  100% {
+    border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+  }
+  50% {
+    border-radius: 77% 23% 54% 46%/40% 38% 62% 60%;
+  }
+  25% {
+    border-radius: 80% 27% 60% 36%/32% 44% 52% 50%;
+  }
+  0% {
+    border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+  }
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton .plays {
   position: absolute;
-  top: 70px;
-  left: 110px;
+  top: 67px;
+  left: 97px;
   color: #6af7ce;
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 .element06 picture {
@@ -318,6 +377,71 @@ body {
   border-radius: 15px;
   text-align: center;
   padding: 1em;
+  border: none;
+  white-space: nowrap;
+  color: black;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:hover {
+  background-position: 500% 100%;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(1) {
+  filter: hue-rotate(20deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(2) {
+  filter: hue-rotate(40deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(3) {
+  filter: hue-rotate(60deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(4) {
+  filter: hue-rotate(80deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(5) {
+  filter: hue-rotate(100deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(6) {
+  filter: hue-rotate(120deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(7) {
+  filter: hue-rotate(140deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(8) {
+  filter: hue-rotate(160deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(9) {
+  filter: hue-rotate(180deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(10) {
+  filter: hue-rotate(200deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(11) {
+  filter: hue-rotate(220deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(12) {
+  filter: hue-rotate(240deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(13) {
+  filter: hue-rotate(260deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(14) {
+  filter: hue-rotate(280deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(15) {
+  filter: hue-rotate(300deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(16) {
+  filter: hue-rotate(320deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(17) {
+  filter: hue-rotate(340deg);
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink:nth-child(18) {
+  filter: hue-rotate(360deg);
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 .element07 .bo07 .noLink a {
   color: black;
@@ -367,8 +491,7 @@ body {
   top: 13em;
   left: 12.5em;
 }
-#main-content .maintool .List01 .Lvideo02 .colorbox01 .noLink02 a {
-  color: black;
+#main-content .maintool .List01 .Lvideo02 .colorbox01 .noLink02 {
   font-family: "s2";
   font-weight: 700;
   font-size: 1.4rem;
@@ -381,6 +504,22 @@ body {
   border-radius: 15px;
   text-align: center;
   padding: 1em;
+  white-space: nowrap;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 .noLink02 a {
+  color: black;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 .noLink02:hover {
+  background-position: 500% 100%;
+  border: 2px solid white;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox01 .noLink02:hover a {
+  color: white;
 }
 #main-content .maintool .List01 .Lvideo02 .colorbox02 {
   position: absolute;
@@ -410,7 +549,7 @@ body {
   top: 14em;
   right: -38em;
 }
-#main-content .maintool .List01 .Lvideo02 .colorbox02 .noLink03 a {
+#main-content .maintool .List01 .Lvideo02 .colorbox02 .noLink03 {
   color: white;
   font-family: "s2";
   font-weight: 700;
@@ -424,6 +563,22 @@ body {
   border-radius: 15px;
   text-align: center;
   padding: 1em;
+  white-space: nowrap;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 .noLink03 a {
+  color: white;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 .noLink03:hover {
+  background-position: 500% 100%;
+  border: 2px solid black;
+}
+#main-content .maintool .List01 .Lvideo02 .colorbox02 .noLink03:hover a {
+  color: black;
 }
 #main-content .maintool .List01 .Lvideo03 .banerover {
   position: relative;
@@ -719,24 +874,44 @@ body {
   border-radius: 15px;
 }
 #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter {
-  padding-top: 30px;
-}
-#main-content .maintool .List02 .pinkb .pinkgroup .right .twitter .twitterbox {
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: #1da1f2;
   width: 320px;
   height: 50px;
-  color: white;
   padding: 10px;
   border-radius: 5px;
   font-family: "s4";
   font-weight: 700;
   font-size: 20px;
+  white-space: nowrap;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+}
+#main-content .maintool .List02 .pinkb .pinkgroup .right .twitter .twitterbox {
+  width: 20px;
+  display: inline-block;
+  color: white;
+}
+#main-content .maintool .List02 .pinkb .pinkgroup .right .twitter .twitterbox #tw {
+  fill: white;
 }
 #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter .twitterbox .iconright {
   margin-left: 6px;
+}
+#main-content .maintool .List02 .pinkb .pinkgroup .right .twitter:hover {
+  background-color: white;
+  filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 255, 255));
+  background-position: 500% 100%;
+  border: 2px solid #1da1f2;
+}
+#main-content .maintool .List02 .pinkb .pinkgroup .right .twitter:hover #tw {
+  fill: #1da1f2;
+}
+#main-content .maintool .List02 .pinkb .pinkgroup .right .twitter:hover a {
+  color: #1da1f2;
 }
 #main-content .maintool .List03 {
   position: relative;
