@@ -1,15 +1,28 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Route, useParams, Link } from 'react-router-dom';
+import { Context } from '../Mycontext';
+import Sliderbox from './Sliderbox';
+
+//아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+
+// 꾸미기
 import '../scss/Home.scss';
-import { Context } from '../Mycontext';
+
+// SVG이미지
 import { ReactComponent as Colorbox } from '../imgs/box.svg';
 import { ReactComponent as Colorbox2 } from '../imgs/box2.svg';
 import { ReactComponent as Read } from '../imgs/read.svg';
 import { ReactComponent as Twitter } from '../imgs/twitter.svg';
 import { ReactComponent as Monn } from '../imgs/monn.svg';
+
+// 슬라이드
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+// import React, { Component } from 'react';
+// import Slider from 'react-slick';
 
 const Home = () => {
   const { setState } = useContext(Context);
@@ -25,19 +38,19 @@ const Home = () => {
   //     });
   //   });
 
-  //   let maintool = document.querySelector('div .maintool');
+  //   let maintool = document.querySelector('.maintool');
   //   observer.observe(maintool);
 
-  const [slidePx, setSlidePx] = useState(0);
+  //   const [slidePx, setSlidePx] = useState(0);
 
-  const toPrev = () => {
-    slidePx < 0 && setSlidePx(slidePx + 1375);
-  };
+  //   const toPrev = () => {
+  //     slidePx < 0 && setSlidePx(slidePx + 1375);
+  //   };
 
-  const toNext = () => {
-    slidePx > -4125 && setSlidePx(slidePx - 1375);
-  };
-  if (!Home) return;
+  //   const toNext = () => {
+  //     slidePx > -4125 && setSlidePx(slidePx - 1375);
+  //   };
+  //   if (!Home) return;
 
   return (
     <>
@@ -162,61 +175,60 @@ const Home = () => {
                 <img className="motion05" src="./img/home/char-5.png" />
               </picture>
             </div>
-
-            <div className="homelogo">
-              <div className="stagger"></div>
-              <h1 className="view">
-                <picture>
-                  <source
-                    src="/img/home/splatoon3-logo.webp"
-                    type="image/webp"
-                    width="560"
-                    height="322"
-                  />
-                  <source
-                    src="/img/home/splatoon3-logo.png"
-                    type="image/png"
-                    width="560"
-                    height="322"
-                  />
-                  <img className="pos" src="/img/home/splatoon3-logo.png" />
-                </picture>
-              </h1>
-              <div className="relatext">
-                <picture>
-                  <source
-                    media="(min-width: 640px)"
-                    srcSet="/img/home/tape-1-medium-up.webp"
-                    width="300"
-                    height="68"
-                    type="image/webp"
-                  />
-                  <source
-                    media="(min-width: 640px)"
-                    srcSet="/img/home/tape-1.png"
-                    width="300"
-                    height="68"
-                    type="image/png"
-                  />
-                  <img className="tape1" src="/img/home/tape-1.png" />
-                </picture>
-                <a>
-                  <span className="aip"></span>
-                  <div className="wrapper">
-                    <button>Buy now</button>
-                  </div>
-                  {/* <span className="drip">
+          </div>
+          <div className="homelogo">
+            <div className="stagger"></div>
+            <h1 className="view">
+              <picture>
+                <source
+                  src="/img/home/splatoon3-logo.webp"
+                  type="image/webp"
+                  width="560"
+                  height="322"
+                />
+                <source
+                  src="/img/home/splatoon3-logo.png"
+                  type="image/png"
+                  width="560"
+                  height="322"
+                />
+                <img className="pos" src="/img/home/splatoon3-logo.png" />
+              </picture>
+            </h1>
+            <div className="relatext">
+              <picture>
+                <source
+                  media="(min-width: 640px)"
+                  srcSet="/img/home/tape-1-medium-up.webp"
+                  width="300"
+                  height="68"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcSet="/img/home/tape-1.png"
+                  width="300"
+                  height="68"
+                  type="image/png"
+                />
+                <img className="tape1" src="/img/home/tape-1.png" />
+              </picture>
+              <a>
+                <span className="aip"></span>
+                <div className="wrapper">
+                  <button>Buy now</button>
+                </div>
+                {/* <span className="drip">
                     {' '}
                     Buy now <FontAwesomeIcon icon={faChevronRight} />{' '}
                   </span> */}
-                </a>
-              </div>
+              </a>
             </div>
+          </div>
 
-            <div className="headerbanner">
-              <div className="banner01"></div>
-              <div className="banner02"></div>
-            </div>
+          <div className="headerbanner">
+            <div className="banner01"></div>
+            <div className="banner02"></div>
           </div>
         </div>
 
@@ -294,51 +306,53 @@ const Home = () => {
                     <img src="/img/home/graffiti-1.png" />
                   </picture>
                 </div>
-                <div className="element07">
-                  <div className="bo07">
-                    <h2>
-                      Ink up the
-                      <span>Splatlands</span>
-                    </h2>
-                    <p>
-                      Enter a sun-scorched desert inhabited by battle-hardened
-                      Inklings and Octolings. Ink, dive, swim, and splat your
-                      way to the top!
-                    </p>
-                    <span className="noLink">
-                      <Link to="/">
-                        Welcome to Splatsvlle{' '}
-                        <FontAwesomeIcon icon={faChevronRight} />{' '}
-                      </Link>
-                    </span>
+                <div className="elementbox78">
+                  <div className="element07">
+                    <div className="bo07">
+                      <h2>
+                        Ink up the
+                        <span>Splatlands</span>
+                      </h2>
+                      <p>
+                        Enter a sun-scorched desert inhabited by battle-hardened
+                        Inklings and Octolings. Ink, dive, swim, and splat your
+                        way to the top!
+                      </p>
+                      <span className="noLink">
+                        <Link to="/">
+                          Welcome to Splatsvlle{' '}
+                          <FontAwesomeIcon icon={faChevronRight} />{' '}
+                        </Link>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div className="element08">
-                  <picture>
+                  <picture className="tape078">
                     <source />
                     <img
                       className="tape01"
                       src="/img/home/tape-2-medium-up.webp"
                     />
                   </picture>
-                  <picture>
-                    <source
-                      srcSet="/img/home/s3-home-intro-blade.webp"
-                      type="image/webp"
-                      width="558"
-                      height="313.5"
-                    />
-                    <source
-                      srcSet="/img/home/s3-home-intro-blade.jpg"
-                      type="image/jpg"
-                      width="558"
-                      height="313.5"
-                    />
-                    <img
-                      className="imgs3"
-                      src="/img/home/s3-home-intro-blade.jpg"
-                    />
-                  </picture>
+                  <div className="element08">
+                    <picture>
+                      <source
+                        srcSet="/img/home/s3-home-intro-blade.webp"
+                        type="image/webp"
+                        width="558"
+                        height="313.5"
+                      />
+                      <source
+                        srcSet="/img/home/s3-home-intro-blade.jpg"
+                        type="image/jpg"
+                        width="558"
+                        height="313.5"
+                      />
+                      <img
+                        className="imgs3"
+                        src="/img/home/s3-home-intro-blade.jpg"
+                      />
+                    </picture>
+                  </div>
                 </div>
               </article>
             </section>
@@ -349,42 +363,45 @@ const Home = () => {
                   <img className="backs02" src="/img/home/graffiti-2.png" />
                 </picture>
               </div>
-              <div className="colorbox01">
-                <div className="bluebox">
-                  <Colorbox className="bluemo" width="800px" height="650px" />
-                  <h2>How to play, game modes, and all that</h2>
-                  <video muted autoPlay loop>
-                    <source
-                      src="/img/home/video/s3_howtoplay_turfwar.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                  <span className="noLink02">
-                    <Link to="/">
-                      Dive In <FontAwesomeIcon icon={faChevronRight} />{' '}
-                    </Link>
-                  </span>
+
+              <div className="bluereamo">
+                <div className="colorbox01">
+                  <div className="bluebox">
+                    <Colorbox className="bluemo" width="800px" height="650px" />
+                    <h2>How to play, game modes, and all that</h2>
+                    <video muted autoPlay loop>
+                      <source
+                        src="/img/home/video/s3_howtoplay_turfwar.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <span className="noLink02">
+                      <Link to="/">
+                        Dive In <FontAwesomeIcon icon={faChevronRight} />{' '}
+                      </Link>
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="colorbox02">
-                <div className="reamonbox">
-                  <Colorbox2
-                    className="reamonmo"
-                    width="800px"
-                    height="650px"
-                  />
-                  <h2>Make a splash with the latest weapons and gear</h2>
-                  <video muted autoPlay loop>
-                    <source
-                      src="/img/home/video/s3_weapons_headervideo.mp4"
-                      type="video/mp4"
+                <div className="colorbox02">
+                  <div className="reamonbox">
+                    <Colorbox2
+                      className="reamonmo"
+                      width="800px"
+                      height="650px"
                     />
-                  </video>
-                  <span className="noLink03">
-                    <Link to="/">
-                      Fit check <FontAwesomeIcon icon={faChevronRight} />{' '}
-                    </Link>
-                  </span>
+                    <h2>Make a splash with the latest weapons and gear</h2>
+                    <video muted autoPlay loop>
+                      <source
+                        src="/img/home/video/s3_weapons_headervideo.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <span className="noLink03">
+                      <Link to="/">
+                        Fit check <FontAwesomeIcon icon={faChevronRight} />{' '}
+                      </Link>
+                    </span>
+                  </div>
                 </div>
               </div>
             </section>
@@ -416,9 +433,10 @@ const Home = () => {
                   <a href="#">Peep the ink-formarion feed </a>
                 </span>
               </div>
-
-              <div className="rowimg">
-                <div className="rowbut"></div>
+              <Sliderbox />
+              {/* <div className="rowimg">
+                              <div className="rowbut"></div>
+                              
                 <ul className="rowimgbox">
                   <li className="rowimg01">
                     <div className="state01">
@@ -546,9 +564,10 @@ const Home = () => {
                   </li>
                   <li className="rowimg03"></li>
                 </ul>
-              </div>
+              </div> */}
 
-              <div className="rowbar">
+              {/* 슬라이드 */}
+              {/* <div className="rowbar">
                 <div
                   className="prevBtn"
                   onClick={toPrev}
@@ -563,7 +582,7 @@ const Home = () => {
                 >
                   <i className="fa-solid fa-chevron-right" />
                 </div>
-              </div>
+              </div> */}
             </section>
           </div>
 
@@ -634,39 +653,43 @@ const Home = () => {
             <div className="List03back">
               <article className="listfront">
                 <div className="listleft">
-                  <picture>
-                    <source />
-                    <img
-                      className="game01"
-                      src="/img/home/game-pack-medium-up.webp"
-                    />
-                  </picture>
-                  <picture>
-                    <source />
-                    <img
-                      className="game02"
-                      src="/img/home/char-7-medium-up.webp"
-                    />
-                  </picture>
-                  <picture>
-                    <source />
-                    <img className="game03" src="/img/home/char-8 (1).webp" />
-                  </picture>
-                  <picture>
-                    <source />
-                    <img className="game04" src="/img/home/graffiti-7.webp" />
-                  </picture>
+                  <div className="listleftbox">
+                    <picture>
+                      <source />
+                      <img
+                        className="game01"
+                        src="/img/home/game-pack-medium-up.webp"
+                      />
+                    </picture>
+                    <picture>
+                      <source />
+                      <img
+                        className="game02"
+                        src="/img/home/char-7-medium-up.webp"
+                      />
+                    </picture>
+                    <picture>
+                      <source />
+                      <img className="game03" src="/img/home/char-8 (1).webp" />
+                    </picture>
+                    <picture>
+                      <source />
+                      <img className="game04" src="/img/home/graffiti-7.webp" />
+                    </picture>
+                  </div>
                 </div>
                 <div className="listright">
                   <h2 className="righttext">
                     GET <span className="vartext">THE GAME</span>
                   </h2>
                   <p>Sink your beak into the Splatoon 3 game today!</p>
-                  <a href="#">
-                    <span className="vartext02">
-                      Buy now <FontAwesomeIcon icon={faChevronRight} />
-                    </span>
-                  </a>
+                  <div className="listrighta">
+                    <a href="#">
+                      <span className="vartext02">
+                        Buy now <FontAwesomeIcon icon={faChevronRight} />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </article>
               <div className="banner03">
@@ -737,52 +760,58 @@ const Home = () => {
               <div className="bannerg"></div>
             </div>
             <article className="bluestc">
-              <div className="blueleft">
-                <picture>
-                  <source />
-                  <img className="mynin" src="/img/home/my-nintendo-logo.svg" />
-                </picture>
-                <h2>Didya know?</h2>
-                <div className="content-spacing">
-                  <p>
-                    Find these squiddos around the site to dive a little deeper
-                    into the world of the Splatoon 3 game. Poke all five to earn
-                    100 My Nintendo™ Platinum Points.
-                  </p>
-                  <div className="monnimg">
-                    <Monn className="mon01" />
-                    <Monn className="mon01" />
-                    <Monn className="mon01" />
-                    <Monn className="mon01" />
-                    <Monn className="mon01" />
-                  </div>
-                  <a href="#" className="inboxa">
-                    <span className="inbox">Sign in</span>
-                  </a>
-                  <p>Not yet a My Nintendo member?</p>
-                  <div className="doin">
-                    <span className="dodo">Sign up</span> now for free!
-                  </div>
-                  <div className="doout">
-                    A Nintendo Account is required to receive and redeem points.{' '}
-                    <a href="#" className="inboxb">
-                      <span className="dodo">Terms apply.</span>
+              <div className="bluestcbox">
+                <div className="blueleft">
+                  <picture>
+                    <source />
+                    <img
+                      className="mynin"
+                      src="/img/home/my-nintendo-logo.svg"
+                    />
+                  </picture>
+                  <h2>Didya know?</h2>
+                  <div className="content-spacing">
+                    <p>
+                      Find these squiddos around the site to dive a little
+                      deeper into the world of the Splatoon 3 game. Poke all
+                      five to earn 100 My Nintendo™ Platinum Points.
+                    </p>
+                    <div className="monnimg">
+                      <Monn className="mon01" />
+                      <Monn className="mon01" />
+                      <Monn className="mon01" />
+                      <Monn className="mon01" />
+                      <Monn className="mon01" />
+                    </div>
+                    <a href="#" className="inboxa">
+                      <span className="inbox">Sign in</span>
                     </a>
+                    <p>Not yet a My Nintendo member?</p>
+                    <div className="doin">
+                      <span className="dodo">Sign up</span> now for free!
+                    </div>
+                    <div className="doout">
+                      A Nintendo Account is required to receive and redeem
+                      points.{' '}
+                      <a href="#" className="inboxb">
+                        <span className="dodo">Terms apply.</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="blueright">
-                <picture>
-                  <source />
-                  <img className="char8" src="/img/home/char-10.webp" />
-                </picture>
-                <picture>
-                  <source />
-                  <img
-                    className="char9"
-                    src="/img/home/char-9-medium-up.webp"
-                  />
-                </picture>
+                <div className="blueright">
+                  <picture>
+                    <source />
+                    <img className="char8" src="/img/home/char-10.webp" />
+                  </picture>
+                  <picture>
+                    <source />
+                    <img
+                      className="char9"
+                      src="/img/home/char-9-medium-up.webp"
+                    />
+                  </picture>
+                </div>
               </div>
             </article>
           </div>
