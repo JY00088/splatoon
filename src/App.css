@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.slick-slide{
+    width: 465px !important;
+}
+.slick-track{
+    margin-top: 100px;
+    margin-left: 500px;
+}
+.slick-prev{left:0px; z-index: 10;}
+
+/* 왼쪽 슬라이드 첫 화면  */
+.slick-prev.slick-disabled:before{
+    opacity: 0;
+}
+.slick-prev::before {
+    color: #6af7ce;
+    opacity: 1;
+    font-size: 100px;
+    animation: prev2 0.5s ease-in-out Infinite Alternate;
+}
+@keyframes prev2 {
+    0% {
+        top:0px;
+      }
+      95% {
+        width: 100px;
+      }
+    to {
+        top:300px;
+        width:115px;
+        height:90px
+      }
+}
+
+
+/* 오른쪽 마지막 화면 */
+.slick-next.slick-disabled:before{
+    opacity: 0;
+}
+.slick-next{right:80px;}
+.slick-next::before {
+    color: #6af7ce;
+    opacity: 1;
+    font-size: 100px;
+}
