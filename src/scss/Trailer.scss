@@ -15,30 +15,63 @@
         //object-fit: cover;
         img {
             width: 100%;
-            height: 1010px;
+            height: 100vh;
+            position: fixed;
         }
     }
 
     .trameun {
-        position: absolute;
-        top: 50px;
-        right: 50px;
-        background-color: yellowgreen;
+        border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
         width: 70px;
         height: 70px;
+        background: #eaff3d;
+        animation: wave 8s ease-in-out infinite;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        img {
+        .one2 {
             width: 25px;
-            color: #603bff;
+        }
+
+        @keyframes wave {
+            100% {
+                border-radius: 70% 50% 72% 38% / 87% 61% 89% 23%;
+            }
+
+            50% {
+                border-radius: 77% 23% 54% 46% / 40% 38% 62% 60%;
+            }
+
+            25% {
+                border-radius: 40% 87% 30% 36% / 32% 44% 82% 50%;
+            }
+
+            0% {
+                border-radius: 70% 50% 72% 38% / 87% 61% 89% 23%;
+            }
+        }
+
+        .plays {
+            position: absolute;
+            top: 67px;
+            left: 97px;
+            color: #6af7ce;
         }
     }
-    .videomodal{
+
+
+    .videomodal {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        .player{
-            width:800px;
+
+        .player {
+            width: 800px;
             height: 900px;
         }
     }

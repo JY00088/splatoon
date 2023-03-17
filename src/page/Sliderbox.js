@@ -1,9 +1,25 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  useState,
+  useRef,
+  useContext,
+  useEffect,
+} from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ReactComponent as Read } from '../imgs/read.svg';
 import '../App.css';
+
+//     let elSlik = useRef();
+
+//     let slkFn = function () {
+//         elSlik.current.classList.toggle('clk')
+//     }
+
+// useEffect(() => {
+//         const sT = document.querySelector('.state01')
+//     })
 
 export default class SimpleSlider extends Component {
   render() {

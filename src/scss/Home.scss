@@ -320,6 +320,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                margin-bottom: 200px;
 
                 .Ltool01 {
                     position: relative;
@@ -637,29 +638,27 @@ body {
                 align-items: center;
                 flex-direction: column;
 
-                .back02 {
-                    position: relative;
 
-                    picture {
-                        .backs02 {}
-                    }
-                }
 
                 .bluereamo {
                     display: flex;
+                    width: 100%;
+                    margin: 0 auto;
+                    z-index: 1;
 
                     .colorbox01 {
                         position: relative;
-                        // top: 82em;
-                        // left: 14em;
-                        transform: rotate(-4deg);
+                        transform: rotate(-2deg);
+                        width: 50%;
 
-                        .bluemo {
-                            //position: absolute;
 
-                            .st0 {
-                                fill: #603bff;
-                            }
+                        .bluebox {
+                            position: relative;
+                            height: 100%;
+                            left: 45%;
+                            top: 0;
+                            width: 100%;
+
                         }
 
                         .a {
@@ -667,7 +666,7 @@ body {
                             position: absolute;
                             left: 50%;
                             top: 50%;
-                            transform: translate(-50%, -50%);
+                            transform: translate(-102%, -50%);
                             display: flex;
                             flex-direction: column;
                             align-items: center;
@@ -677,7 +676,7 @@ body {
                             h2 {
                                 left: 4em;
                                 top: 3.3em;
-                                width: 520px;
+                                width: 420px;
                                 color: white;
                                 font-weight: 800;
                                 font-family: "s2";
@@ -686,9 +685,9 @@ body {
                             }
 
                             video {
-                                top: 13em;
-                                left: 12.5em;
-
+                                width: 300px;
+                                border: 5px solid white;
+                                filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
                             }
 
                             .noLink02 {
@@ -744,10 +743,11 @@ body {
                     }
 
                     .colorbox02 {
+                        width: 50%;
                         position: relative;
                         // top: 70em;
                         // right: 62em;
-                        transform: rotate(4deg);
+                        transform: translate(0%, -10%) rotate(2deg);
 
                         .reamonmo {
                             //position: absolute;
@@ -762,14 +762,14 @@ body {
                             position: absolute;
                             left: 50%;
                             top: 50%;
-                            transform: translate(-50%, -50%);
+                            transform: translate(-102%, -50%);
                             display: flex;
                             flex-direction: column;
                             align-items: center;
                             gap: 30px;
 
                             h2 {
-                                width: 520px;
+                                width: 420px;
                                 color: black;
                                 font-weight: 800;
                                 font-family: "s2";
@@ -777,7 +777,11 @@ body {
                                 text-align: center;
                             }
 
-                            video {}
+                            video {
+                                width: 300px;
+                                border: 5px solid white;
+                                filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
+                            }
 
                             .noLink03 {
                                 color: white;
@@ -828,6 +832,42 @@ body {
                     }
                 }
 
+
+                .back02 {
+                    position: relative;
+                    width: 100%;
+
+                    .backbanner {
+                        position: relative;
+                        width: 100%;
+                        z-index: 1;
+                        bottom: -56px;
+
+                        .baner2me {
+                            height: 110px;
+                            background-image: url("../../public/img/home/banner-design2-medium-up.png");
+                            transform: rotate(1deg);
+                            transform-origin: 111% 50%;
+                        }
+
+                        .baner3me {
+                            height: 110px;
+                            background-image: url("../../public/img/home/banner-green-medium-up.png");
+                            transform: rotate(-1deg);
+                            transform-origin: -50% 50%;
+                        }
+                    }
+
+                    picture {
+                        .backs02 {
+                            position: absolute;
+                            top: -280px;
+                            right: 250px;
+                        }
+                    }
+
+
+                }
             }
 
             .Lvideo03 {

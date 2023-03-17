@@ -1,8 +1,11 @@
 import { useState, useRef, useContext, useEffect } from 'react';
 import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Context } from '../Mycontext';
+
+//아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { Context } from '../Mycontext';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const { state } = useContext(Context);
@@ -83,13 +86,33 @@ const Header = () => {
                     <img className="logo-ink03" src="/img/back/ink02.png" />
                   </picture>
                 </div>
-                <Link to="/buy">Buy now</Link>
-                <Link to="/">Home</Link>
-                <Link to="/welcome">Welcome To Splatsville</Link>
-                <Link to="/how">How to play</Link>
-                <Link to="/weapons">Weapons & gear</Link>
-                <Link to="/nows">News</Link>
-                <Link to="/events">Events</Link>
+                <div className="navflex">
+                  <div className="navbtn">
+                    <Link to="/buy">
+                      Buy now <FontAwesomeIcon icon={faChevronRight} />
+                    </Link>
+                  </div>
+
+                  <Link to="/">
+                    Home <FontAwesomeIcon icon={faChevronRight} />
+                  </Link>
+                  <Link to="/welcome">
+                    Welcome To Splatsville{' '}
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </Link>
+                  <Link to="/how">
+                    How to play <FontAwesomeIcon icon={faChevronRight} />
+                  </Link>
+                  <Link to="/weapons">
+                    Weapons & gear <FontAwesomeIcon icon={faChevronRight} />
+                  </Link>
+                  <Link to="/nows">
+                    News <FontAwesomeIcon icon={faChevronRight} />
+                  </Link>
+                  <Link to="/events">
+                    Events <FontAwesomeIcon icon={faChevronRight} />
+                  </Link>
+                </div>
               </nav>
             </div>
           </div>

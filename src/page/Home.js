@@ -11,10 +11,9 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 // 꾸미기
 import '../scss/Home.scss';
 
-// SVG이미지
-import { ReactComponent as Colorbox } from '../imgs/box.svg';
-import { ReactComponent as Colorbox2 } from '../imgs/box2.svg';
-import { ReactComponent as Read } from '../imgs/read.svg';
+// SVG이미지\
+import { ReactComponent as Colorboxcopy } from '../imgs/box copy.svg';
+import { ReactComponent as Colorbox2 } from '../imgs/box copy 2.svg';
 import { ReactComponent as Twitter } from '../imgs/twitter.svg';
 import { ReactComponent as Monn } from '../imgs/monn.svg';
 
@@ -26,14 +25,19 @@ import { ReactComponent as Monn } from '../imgs/monn.svg';
 
 const Home = () => {
   const { setState } = useContext(Context);
-  let { page } = useParams();
+    let { page } = useParams();
+    
+   
   console.log(window.scrollY);
   <Route path="/:page"></Route>;
-  useEffect(() => {
+    useEffect(() => {
+      
     window.addEventListener('scroll', handlescroll);
     return () => {
       window.removeEventListener('scroll', handlescroll);
     };
+        
+        
     setState(true);
   }, []);
 
@@ -63,25 +67,6 @@ const Home = () => {
     observer.observe(fron);
   };
 
-  // let observer = new IntersectionObserver((e) => {
-  //   e.forEach((h2) => {
-  //     h2.target.style.opacity = 1;
-  //   });
-  // });
-
-  //   let maintool = document.querySelector('.maintool');
-  //   observer.observe(maintool);
-
-  //   const [slidePx, setSlidePx] = useState(0);
-
-  //   const toPrev = () => {
-  //     slidePx < 0 && setSlidePx(slidePx + 1375);
-  //   };
-
-  //   const toNext = () => {
-  //     slidePx > -4125 && setSlidePx(slidePx - 1375);
-  //   };
-  //   if (!Home) return;
 
   return (
     <>
@@ -389,16 +374,14 @@ const Home = () => {
             </section>
 
             <section className="Lvideo02">
-              <div className="back02">
-                <picture>
-                  <img className="backs02" src="/img/home/graffiti-2.png" />
-                </picture>
-              </div>
-
               <div className="bluereamo">
                 <div className="colorbox01">
                   <div className="bluebox">
-                    <Colorbox className="bluemo" width="700px" height="700px" />
+                    <Colorboxcopy
+                      className="bluemo"
+                      width="500px"
+                      height="700px"
+                    />
                     <div className="a">
                       <h2>How to play, game modes, and all that</h2>
                       <video muted autoPlay loop>
@@ -419,7 +402,7 @@ const Home = () => {
                   <div className="reamonbox">
                     <Colorbox2
                       className="reamonmo"
-                      width="700px"
+                      width="500px"
                       height="700px"
                     />
                     <div className="b">
@@ -438,6 +421,15 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="back02">
+                <div className="backbanner">
+                  <div className="baner2me"></div>
+                  <div className="baner3me"></div>
+                </div>
+                <picture>
+                  <img className="backs02" src="/img/home/graffiti-2.png" />
+                </picture>
               </div>
             </section>
 
