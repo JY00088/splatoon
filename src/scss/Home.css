@@ -1,5 +1,7 @@
+@charset "UTF-8";
 @import "reset.css";
 @import "font.css";
+/*반응형, 브라우저 크기가 639px 이하일때*/
 body {
   overflow-x: hidden;
 }
@@ -7,6 +9,32 @@ body {
 #main-content .headerbox {
   position: relative;
   z-index: 2;
+}
+#main-content .headerbox::before {
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: " ";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0.5%;
+  width: 50px;
+  z-index: 1;
+  background-position: 100%;
+  background-image: url("../../public/img/home/homepage-rip-left.svg");
+}
+#main-content .headerbox::after {
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: " ";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0.5%;
+  width: 50px;
+  z-index: 1;
+  background-position: 0;
+  background-image: url("../../public/img/home/homepage-rip-right.svg");
 }
 #main-content .headerbox .groupback {
   pointer-events: none;
@@ -32,39 +60,105 @@ body {
   bottom: 13%;
 }
 #main-content .headerbox .groupback .calamarimotion01 picture .motion01 {
+  opacity: 0;
   width: 360px;
   max-width: 100%;
   height: auto;
+  -webkit-animation: mon1 0.3s ease-in forwards;
+          animation: mon1 0.3s ease-in forwards;
+}
+@-webkit-keyframes mon1 {
+  to {
+    opacity: 1;
+    transform: translateX(-70%);
+  }
+}
+@keyframes mon1 {
+  to {
+    opacity: 1;
+    transform: translateX(-70%);
+  }
 }
 #main-content .headerbox .groupback .calamarimotion02 {
   position: absolute;
-  left: 10%;
+  left: 0;
   top: 38%;
 }
 #main-content .headerbox .groupback .calamarimotion02 picture .motion02 {
+  opacity: 0;
   width: 230px;
   max-width: 100%;
   height: auto;
+  -webkit-animation: mon2 0.3s ease-in forwards;
+          animation: mon2 0.3s ease-in forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+@-webkit-keyframes mon2 {
+  to {
+    opacity: 1;
+    transform: translateX(50%);
+  }
+}
+@keyframes mon2 {
+  to {
+    opacity: 1;
+    transform: translateX(50%);
+  }
 }
 #main-content .headerbox .groupback .calamarimotion03 {
   position: absolute;
-  left: 24%;
+  left: 10%;
   bottom: 15%;
 }
 #main-content .headerbox .groupback .calamarimotion03 picture .motion03 {
-  width: 250px;
+  opacity: 0;
+  width: 300px;
   max-width: 100%;
   height: auto;
+  -webkit-animation: mon3 0.3s ease-in forwards;
+          animation: mon3 0.3s ease-in forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+@-webkit-keyframes mon3 {
+  to {
+    opacity: 1;
+    transform: translateX(120%);
+  }
+}
+@keyframes mon3 {
+  to {
+    opacity: 1;
+    transform: translateX(120%);
+  }
 }
 #main-content .headerbox .groupback .calamarimotion04 {
   position: absolute;
   left: -20%;
-  bottom: 30px;
+  bottom: 100px;
 }
 #main-content .headerbox .groupback .calamarimotion04 picture .motion04 {
-  width: 1000px;
+  opacity: 0;
+  width: 1100px;
   max-width: 100%;
   height: auto;
+  -webkit-animation: mon4 0.3s ease-in forwards;
+          animation: mon4 0.3s ease-in forwards;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+@-webkit-keyframes mon4 {
+  to {
+    opacity: 1;
+    transform: translateX(60%);
+  }
+}
+@keyframes mon4 {
+  to {
+    opacity: 1;
+    transform: translateX(60%);
+  }
 }
 #main-content .headerbox .groupback .calamarimotion05 {
   opacity: 1;
@@ -78,9 +172,13 @@ body {
   height: auto;
 }
 #main-content .headerbox .homelogo {
-  opacity: 1;
+  -webkit-animation: logobtn 1s ease-out forwards;
+          animation: logobtn 1s ease-out forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  opacity: 0;
   position: absolute;
-  right: 0;
+  right: 10%;
   top: 80px;
   pointer-events: fill;
 }
@@ -93,22 +191,13 @@ body {
   right: -120px;
   top: 0;
 }
+#main-content .headerbox .homelogo .relatext picture .tape1 {
+  transform: rotate(10deg);
+}
 #main-content .headerbox .homelogo .relatext a {
   position: absolute;
-  left: 90px;
-  top: -16px;
-  /* .drip {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 140px;
-      height: 50px;
-      box-sizing: border-box;
-      border-radius: 8px;
-      background: yellow;
-      font-family: "s2";
-      font-weight: 700;
-  } */
+  left: 73px;
+  top: -18px;
 }
 #main-content .headerbox .homelogo .relatext a .wrapper {
   display: flex;
@@ -135,10 +224,21 @@ body {
 #main-content .headerbox .homelogo .relatext a .wrapper button:hover {
   background-position: 500% 100%;
 }
+@-webkit-keyframes logobtn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes logobtn {
+  to {
+    opacity: 1;
+  }
+}
 #main-content .headerbox .headerbanner {
   position: absolute;
   bottom: -220px;
   width: 100%;
+  z-index: 1;
 }
 #main-content .headerbox .headerbanner .banner01 {
   height: 110px;
@@ -166,6 +266,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 200px;
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool01 {
   position: relative;
@@ -300,6 +401,9 @@ body {
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 {
   margin-top: 145px;
+}
+#main-content .maintool .List01 .Lvideo01 .Ltool02 .element06 {
+  position: relative;
 }
 #main-content .maintool .List01 .Lvideo01 .Ltool02 .element06 picture {
   position: absolute;
@@ -466,40 +570,54 @@ body {
   align-items: center;
   flex-direction: column;
 }
-#main-content .maintool .List01 .Lvideo02 .back02 {
-  position: relative;
-}
 #main-content .maintool .List01 .Lvideo02 .bluereamo {
   display: flex;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
 }
 #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 {
   position: relative;
-  transform: rotate(-4deg);
+  transform: rotate(-2deg);
+  width: 50%;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluemo .st0 {
-  fill: #603bff;
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox {
+  position: relative;
+  height: 100%;
+  left: 45%;
+  top: 0;
+  width: 100%;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 h2 {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .a {
+  opacity: 0;
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-102%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .a h2 {
   left: 4em;
   top: 3.3em;
-  width: 520px;
+  width: 420px;
   color: white;
   font-weight: 800;
   font-family: "s2";
   font-size: 35px;
   text-align: center;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 video {
-  position: absolute;
-  top: 13em;
-  left: 12.5em;
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .a video {
+  width: 300px;
+  border: 5px solid white;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .noLink02 {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .a .noLink02 {
   font-family: "s2";
   font-weight: 700;
   font-size: 1.4rem;
-  position: absolute;
   top: 29rem;
   left: 19.2rem;
   background: #eaff3d;
@@ -515,47 +633,67 @@ body {
   transition: 1.5s ease;
   filter: hue-rotate(10deg);
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .noLink02 a {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .a .noLink02 a {
   color: black;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .noLink02:hover {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .a .noLink02:hover {
   background-position: 500% 100%;
   border: 2px solid white;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .noLink02:hover a {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .a .noLink02:hover a {
   color: white;
 }
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .active {
+  -webkit-animation: bluebox01 0.5s ease-in-out forwards;
+          animation: bluebox01 0.5s ease-in-out forwards;
+}
+@-webkit-keyframes bluebox01 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bluebox01 {
+  to {
+    opacity: 1;
+  }
+}
 #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 {
+  width: 50%;
   position: relative;
-  transform: rotate(4deg);
+  transform: translate(0%, -10%) rotate(2deg);
 }
 #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonmo .st02 {
   fill: #eaff3d;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 h2 {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .b {
+  opacity: 0;
   position: absolute;
-  left: 4em;
-  top: 3.3em;
-  width: 520px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-102%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .b h2 {
+  width: 420px;
   color: black;
   font-weight: 800;
   font-family: "s2";
   font-size: 35px;
   text-align: center;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 video {
-  position: absolute;
-  top: 13em;
-  left: 12.5em;
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .b video {
+  width: 300px;
+  border: 5px solid white;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .noLink03 {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .b .noLink03 {
   color: white;
   font-family: "s2";
   font-weight: 700;
   font-size: 1.4rem;
-  position: absolute;
-  top: 29rem;
-  left: 19rem;
   background: #603bff;
   width: 200px;
   height: 70px;
@@ -569,15 +707,56 @@ body {
   transition: 1.5s ease;
   filter: hue-rotate(10deg);
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .noLink03 a {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .b .noLink03 a {
   color: white;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .noLink03:hover {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .b .noLink03:hover {
   background-position: 500% 100%;
   border: 2px solid black;
 }
-#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .noLink03:hover a {
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .b .noLink03:hover a {
   color: black;
+}
+#main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .active {
+  -webkit-animation: remobox01 0.5s ease-in-out forwards;
+          animation: remobox01 0.5s ease-in-out forwards;
+}
+@-webkit-keyframes remobox01 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes remobox01 {
+  to {
+    opacity: 1;
+  }
+}
+#main-content .maintool .List01 .Lvideo02 .back02 {
+  position: relative;
+  width: 100%;
+}
+#main-content .maintool .List01 .Lvideo02 .back02 .backbanner {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  bottom: -56px;
+}
+#main-content .maintool .List01 .Lvideo02 .back02 .backbanner .baner2me {
+  height: 110px;
+  background-image: url("../../public/img/home/banner-design2-medium-up.png");
+  transform: rotate(1deg);
+  transform-origin: 111% 50%;
+}
+#main-content .maintool .List01 .Lvideo02 .back02 .backbanner .baner3me {
+  height: 110px;
+  background-image: url("../../public/img/home/banner-green-medium-up.png");
+  transform: rotate(-1deg);
+  transform-origin: -50% 50%;
+}
+#main-content .maintool .List01 .Lvideo02 .back02 picture .backs02 {
+  position: absolute;
+  top: -280px;
+  right: 250px;
 }
 #main-content .maintool .List01 .Lvideo03 .banerover {
   position: relative;
@@ -643,6 +822,31 @@ body {
   font-family: "s4";
   color: white;
 }
+#main-content .maintool .List01 .Lvideo03 .rot {
+  position: relative;
+  opacity: 0;
+}
+#main-content .maintool .List01 .Lvideo03 .rot .t03 {
+  width: 500px;
+  left: -56px;
+  top: -160px;
+  transform: rotate(-4deg);
+  position: absolute;
+}
+#main-content .maintool .List01 .Lvideo03 .active {
+  -webkit-animation: rot03 0.5s ease-in-out forwards;
+          animation: rot03 0.5s ease-in-out forwards;
+}
+@-webkit-keyframes rot03 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rot03 {
+  to {
+    opacity: 1;
+  }
+}
 #main-content .maintool .List01 .Lvideo03 .rowimg {
   transform: translate(0px, 0px, 0px);
 }
@@ -658,18 +862,18 @@ body {
   position: absolute;
   top: -1.1rem;
   width: 130px;
-  left: 7rem;
+  left: 2rem;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting02 {
   position: absolute;
   top: 70px;
-  left: 120px;
+  left: 35px;
   width: 330px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting03 {
   position: absolute;
   top: 277px;
-  left: 118px;
+  left: 35px;
   width: 330px;
   font-family: "s4";
   font-weight: 500;
@@ -681,13 +885,13 @@ body {
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting04 {
   position: absolute;
-  top: 385px;
-  left: 117px;
+  top: 373px;
+  left: 35px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting05 {
   position: absolute;
-  top: 413px;
-  left: 402px;
+  top: 402px;
+  right: 100px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 {
   position: relative;
@@ -701,18 +905,18 @@ body {
   position: absolute;
   top: -1.1rem;
   width: 130px;
-  left: 7rem;
+  left: 2rem;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting02 {
   position: absolute;
   top: 70px;
-  left: 120px;
+  left: 35px;
   width: 330px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting03 {
   position: absolute;
   top: 277px;
-  left: 118px;
+  left: 35px;
   width: 330px;
   font-family: "s4";
   font-weight: 500;
@@ -724,13 +928,13 @@ body {
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting04 {
   position: absolute;
-  top: 385px;
-  left: 117px;
+  top: 373px;
+  left: 35px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting05 {
   position: absolute;
-  top: 413px;
-  left: 410px;
+  top: 402px;
+  right: 100px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 {
   position: relative;
@@ -744,18 +948,18 @@ body {
   position: absolute;
   top: -1.1rem;
   width: 130px;
-  left: 7rem;
+  left: 2rem;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting02 {
   position: absolute;
   top: 70px;
-  left: 120px;
+  left: 35px;
   width: 330px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting03 {
   position: absolute;
   top: 277px;
-  left: 118px;
+  left: 35px;
   width: 330px;
   font-family: "s4";
   font-weight: 500;
@@ -767,13 +971,13 @@ body {
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting04 {
   position: absolute;
-  top: 385px;
-  left: 117px;
+  top: 373px;
+  left: 35px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting05 {
   position: absolute;
-  top: 413px;
-  left: 408px;
+  top: 402px;
+  right: 100px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 {
   position: relative;
@@ -787,18 +991,18 @@ body {
   position: absolute;
   top: -1.1rem;
   width: 130px;
-  left: 7rem;
+  left: 2rem;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting02 {
   position: absolute;
   top: 70px;
-  left: 120px;
+  left: 35px;
   width: 330px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting03 {
   position: absolute;
   top: 277px;
-  left: 118px;
+  left: 35px;
   width: 330px;
   font-family: "s4";
   font-weight: 500;
@@ -810,13 +1014,13 @@ body {
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting04 {
   position: absolute;
-  top: 385px;
-  left: 117px;
+  top: 373px;
+  left: 35px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting05 {
   position: absolute;
-  top: 413px;
-  left: 408px;
+  top: 402px;
+  right: 100px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 {
   position: relative;
@@ -830,18 +1034,18 @@ body {
   position: absolute;
   top: -1.1rem;
   width: 130px;
-  left: 7rem;
+  left: 2rem;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting02 {
   position: absolute;
   top: 70px;
-  left: 120px;
+  left: 35px;
   width: 330px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting03 {
   position: absolute;
   top: 277px;
-  left: 118px;
+  left: 35px;
   width: 330px;
   font-family: "s4";
   font-weight: 500;
@@ -853,13 +1057,13 @@ body {
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting04 {
   position: absolute;
-  top: 385px;
-  left: 117px;
+  top: 373px;
+  left: 35px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting05 {
   position: absolute;
-  top: 413px;
-  left: 408px;
+  top: 402px;
+  right: 100px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 {
   position: relative;
@@ -873,18 +1077,18 @@ body {
   position: absolute;
   top: -1.1rem;
   width: 130px;
-  left: 7rem;
+  left: 2rem;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting02 {
   position: absolute;
   top: 70px;
-  left: 120px;
+  left: 35px;
   width: 330px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting03 {
   position: absolute;
   top: 277px;
-  left: 118px;
+  left: 35px;
   width: 330px;
   font-family: "s4";
   font-weight: 500;
@@ -896,13 +1100,13 @@ body {
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting04 {
   position: absolute;
-  top: 385px;
-  left: 117px;
+  top: 373px;
+  left: 35px;
 }
 #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting05 {
   position: absolute;
-  top: 413px;
-  left: 408px;
+  top: 402px;
+  right: 100px;
 }
 #main-content .maintool .List02 {
   position: relative;
@@ -1013,9 +1217,10 @@ body {
 }
 #main-content .maintool .List03 {
   position: relative;
+  overflow: hidden;
 }
 #main-content .maintool .List03 .List03back {
-  height: 270vh;
+  height: 240vh;
   background-image: url("../../public/img/home/camo-black-2x.png");
   display: flex;
   align-items: center;
@@ -1027,46 +1232,79 @@ body {
   margin: 0 auto;
   display: flex;
 }
+#main-content .maintool .List03 .List03back .listfront .frontink {
+  position: inherit;
+}
+#main-content .maintool .List03 .List03back .listfront .frontink .foink1 {
+  position: absolute;
+  top: -380px;
+  right: 479px;
+}
+#main-content .maintool .List03 .List03back .listfront .frontink .foink2 {
+  position: absolute;
+  top: 263px;
+  left: 217px;
+}
+#main-content .maintool .List03 .List03back .listfront .frontink .foink3 {
+  position: absolute;
+  width: 400px;
+  top: 43px;
+  left: 432px;
+  transform: rotate(227deg);
+}
+#main-content .maintool .List03 .List03back .listfront .frontink .foink4 {
+  position: absolute;
+  top: 700px;
+  left: 631px;
+  width: 350px;
+}
+#main-content .maintool .List03 .List03back .listfront .frontink .foink5 {
+  position: absolute;
+  right: -42px;
+  top: 624px;
+  width: 400px;
+}
 #main-content .maintool .List03 .List03back .listfront .listleft {
   width: 55%;
 }
 #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox {
   width: 100%;
   position: relative;
+  top: 100px;
   height: 100%;
 }
 #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game01 {
   position: absolute;
-  width: 34%;
-  top: 51%;
-  left: 12%;
+  width: 36%;
+  top: 64%;
+  left: 24%;
   transform: rotate(-10deg);
 }
 #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game02 {
   position: absolute;
   width: 77%;
-  top: -59%;
-  left: 8%;
+  top: -42%;
+  left: 28%;
   transform: rotate(2.4deg);
 }
 #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game03 {
   position: absolute;
-  width: 58%;
-  top: 52%;
-  left: 45%;
+  width: 49%;
+  top: 75%;
+  left: 73%;
   transform: rotate(1deg);
 }
 #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game04 {
   position: absolute;
-  top: 490px;
-  left: 658px;
+  top: 562px;
+  left: 723px;
   transform: rotate(26deg);
 }
 #main-content .maintool .List03 .List03back .listfront .listright {
   width: 600px;
   position: relative;
-  top: 21px;
-  right: 0;
+  top: 180px;
+  right: -40px;
   text-align: center;
 }
 #main-content .maintool .List03 .List03back .listfront .listright .righttext {
@@ -1091,24 +1329,32 @@ body {
   width: 20%;
   margin: 0 auto;
 }
-#main-content .maintool .List03 .List03back .listfront .listright .listrighta a {
-  font-family: "s4";
-}
 #main-content .maintool .List03 .List03back .listfront .listright .listrighta a .vartext02 {
   background-color: #eaff3d;
-  width: 150px;
-  height: 55px;
-  color: black;
-  padding: 10px;
+  flex: 1 1;
+  width: 180px;
+  height: 60px;
   display: flex;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-family: "s4";
+  font-size: 20px;
+  border: none;
+  white-space: nowrap;
+  color: black;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+}
+#main-content .maintool .List03 .List03back .listfront .listright .listrighta a .vartext02:hover {
+  background-position: 500% 100%;
 }
 #main-content .maintool .List03 .List03back .banner03 {
   position: relative;
-  top: 30px;
+  top: 290px;
   width: 100%;
 }
 #main-content .maintool .List03 .List03back .banner03 .bannery {
@@ -1128,8 +1374,8 @@ body {
 }
 #main-content .maintool .List03 .List03back .listback .backonlu picture .onlysti {
   position: absolute;
-  top: 97rem;
-  left: -5rem;
+  top: 76px;
+  left: -550px;
 }
 #main-content .maintool .List03 .List03back .listback .fronolu {
   position: relative;
@@ -1138,6 +1384,8 @@ body {
   flex-wrap: wrap-reverse;
   align-content: center;
   align-items: center;
+  z-index: 1;
+  opacity: 0;
 }
 #main-content .maintool .List03 .List03back .listback .fronolu .only {
   font-family: "s1";
@@ -1181,15 +1429,88 @@ body {
 }
 #main-content .maintool .List03 .List03back .listback .fronolu .onlyclick .onlyspan {
   background-color: #eaff3d;
+  flex: 1 1;
   width: 300px;
   height: 55px;
-  color: black;
-  padding: 10px;
   display: flex;
-  border-radius: 5px;
+  /* padding: 25px 50px; */
+  border-radius: 10px;
+  font-family: "s4";
+  font-size: 20px;
+  border: none;
+  white-space: nowrap;
+  color: black;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+}
+#main-content .maintool .List03 .List03back .listback .fronolu .onlyclick .onlyspan:hover {
+  background-position: 500% 100%;
+}
+#main-content .maintool .List03 .List03back .listback .active {
+  -webkit-animation: fron 0.5s ease-in-out forwards;
+          animation: fron 0.5s ease-in-out forwards;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+@-webkit-keyframes fron {
+  to {
+    opacity: 1;
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+  }
+}
+@keyframes fron {
+  to {
+    opacity: 1;
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+  }
+}
+#main-content .maintool .List03 .List03back .listback .inkrgb {
+  position: relative;
+  opacity: 0;
+}
+#main-content .maintool .List03 .List03back .listback .inkrgb picture .in1 {
+  position: absolute;
+  width: 400px;
+  right: -527px;
+  bottom: -264px;
+  transform: rotate(326deg);
+}
+#main-content .maintool .List03 .List03back .listback .inkrgb picture .in2 {
+  position: absolute;
+  bottom: 377px;
+  right: 0px;
+  width: 200px;
+}
+#main-content .maintool .List03 .List03back .listback .inkrgb picture .in3 {
+  position: absolute;
+  left: -532px;
+  top: -1000px;
+}
+#main-content .maintool .List03 .List03back .listback .inkrgb picture .in4 {
+  position: absolute;
+  left: -487px;
+  top: -700px;
+}
+#main-content .maintool .List03 .List03back .listback .active {
+  -webkit-animation: inkt 0.5s ease-in-out forwards;
+          animation: inkt 0.5s ease-in-out forwards;
+}
+@-webkit-keyframes inkt {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes inkt {
+  to {
+    opacity: 1;
+  }
 }
 #main-content .maintool .List04 {
   height: 100vh;
@@ -1287,17 +1608,25 @@ body {
   justify-content: center;
 }
 #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .inboxa .inbox {
-  font-family: "s4";
-  display: flex;
   background-color: #eaff3d;
-  width: 180px;
-  height: 55px;
+  display: flex;
+  padding: 20px 50px;
+  border-radius: 10px;
+  font-family: "s4";
+  font-size: 20px;
+  border: none;
+  white-space: nowrap;
   color: black;
-  padding: 10px;
-  border-radius: 7px;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+}
+#main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .inboxa .inbox:hover {
+  background-position: 500% 100%;
 }
 #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .doin {
   display: flex;
@@ -1383,13 +1712,22 @@ body {
   padding-top: 50px;
 }
 #main-content .footerbox .fotextback .foterbtn button {
+  padding: 15px 40px;
+  border-radius: 15px;
   font-family: "s4";
   font-size: 20px;
-  width: 200px;
-  border-radius: 10px;
-  height: 60px;
-  background-color: #603bff;
+  border: none;
+  white-space: nowrap;
   color: #eaff3d;
+  background-color: #603bff;
+  background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transition: 1.5s ease;
+  filter: hue-rotate(10deg);
+}
+#main-content .footerbox .fotextback .foterbtn button:hover {
+  background-position: 500% 100%;
 }
 #main-content .footerbox .fotextback .text-back {
   margin: 30px 400px 0;
@@ -1472,4 +1810,1905 @@ body {
   margin-top: 30px;
   color: white;
   font-size: 12px;
+}
+
+@media (max-width: 414px) {
+  body {
+    overflow-x: hidden;
+  }
+  #main-content .headerbox {
+    position: relative;
+    z-index: 2;
+  }
+  #main-content .headerbox::before {
+    display: none;
+  }
+  #main-content .headerbox::after {
+    display: none;
+  }
+  #main-content .headerbox .groupback {
+    pointer-events: none;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+  }
+  #main-content .headerbox .groupback .groupback ::before {
+    content: "";
+    display: block;
+  }
+  #main-content .headerbox .groupback .backpage {
+    opacity: 1;
+  }
+  #main-content .headerbox .groupback .backpage picture .backimg {
+    width: 100%;
+    height: 100%;
+  }
+  #main-content .headerbox .groupback .calamarimotion01 {
+    position: absolute;
+    right: 15%;
+    bottom: 13%;
+  }
+  #main-content .headerbox .groupback .calamarimotion01 picture .motion01 {
+    opacity: 0;
+    width: 170px;
+    max-width: 100%;
+    height: auto;
+    -webkit-animation: mon1 0.3s ease-in forwards;
+            animation: mon1 0.3s ease-in forwards;
+  }
+  @-webkit-keyframes mon1 {
+    to {
+      opacity: 1;
+      transform: translate(70%, -80%);
+    }
+  }
+  @keyframes mon1 {
+    to {
+      opacity: 1;
+      transform: translate(70%, -80%);
+    }
+  }
+  #main-content .headerbox .groupback .calamarimotion02 {
+    position: absolute;
+    left: 0;
+    top: 38%;
+  }
+  #main-content .headerbox .groupback .calamarimotion02 picture .motion02 {
+    opacity: 0;
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+    -webkit-animation: mon2 0.3s ease-in forwards;
+            animation: mon2 0.3s ease-in forwards;
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+  }
+  @-webkit-keyframes mon2 {
+    to {
+      opacity: 1;
+      transform: translate(-10%, -40%);
+    }
+  }
+  @keyframes mon2 {
+    to {
+      opacity: 1;
+      transform: translate(-10%, -40%);
+    }
+  }
+  #main-content .headerbox .groupback .calamarimotion03 {
+    position: absolute;
+    left: 10%;
+    bottom: 15%;
+  }
+  #main-content .headerbox .groupback .calamarimotion03 picture .motion03 {
+    opacity: 0;
+    width: 110px;
+    max-width: 100%;
+    height: auto;
+    -webkit-animation: mon3 0.3s ease-in forwards;
+            animation: mon3 0.3s ease-in forwards;
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+  }
+  @-webkit-keyframes mon3 {
+    to {
+      opacity: 1;
+      transform: translate(100%, -150%);
+    }
+  }
+  @keyframes mon3 {
+    to {
+      opacity: 1;
+      transform: translate(100%, -150%);
+    }
+  }
+  #main-content .headerbox .groupback .calamarimotion04 {
+    position: absolute;
+    left: -20%;
+    bottom: 100px;
+  }
+  #main-content .headerbox .groupback .calamarimotion04 picture .motion04 {
+    opacity: 0;
+    width: 550px;
+    max-width: 100%;
+    height: auto;
+    -webkit-animation: mon4 0.3s ease-in forwards;
+            animation: mon4 0.3s ease-in forwards;
+    -webkit-animation-delay: 0.9s;
+            animation-delay: 0.9s;
+  }
+  @-webkit-keyframes mon4 {
+    to {
+      opacity: 1;
+      transform: translate(20%, -15%);
+    }
+  }
+  @keyframes mon4 {
+    to {
+      opacity: 1;
+      transform: translate(20%, -15%);
+    }
+  }
+  #main-content .headerbox .groupback .calamarimotion05 {
+    opacity: 1;
+    position: absolute;
+    left: -50rem;
+    top: 8rem;
+  }
+  #main-content .headerbox .groupback .calamarimotion05 picture .motion05 {
+    width: 816px;
+    max-width: 100%;
+    height: auto;
+  }
+  #main-content .headerbox .homelogo {
+    -webkit-animation: logobtn 1s ease-out forwards;
+            animation: logobtn 1s ease-out forwards;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    opacity: 0;
+    position: absolute;
+    right: 3%;
+    top: 185px;
+    pointer-events: fill;
+  }
+  #main-content .headerbox .homelogo .view picture .pos {
+    width: 560px;
+    max-width: 100%;
+  }
+  #main-content .headerbox .homelogo .relatext {
+    position: relative;
+    right: -58px;
+    top: -13px;
+  }
+  #main-content .headerbox .homelogo .relatext picture .tape1 {
+    transform: rotate(10deg);
+  }
+  #main-content .headerbox .homelogo .relatext a {
+    position: absolute;
+    left: 73px;
+    top: -18px;
+  }
+  #main-content .headerbox .homelogo .relatext a .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+  }
+  #main-content .headerbox .homelogo .relatext a .wrapper button {
+    flex: 1;
+    padding: 15px 40px;
+    border-radius: 15px;
+    font-family: "s4";
+    font-size: 20px;
+    border: none;
+    white-space: nowrap;
+    color: black;
+    background: #eaff3d;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+  }
+  #main-content .headerbox .homelogo .relatext a .wrapper button:hover {
+    background-position: 500% 100%;
+  }
+  @-webkit-keyframes logobtn {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes logobtn {
+    to {
+      opacity: 1;
+    }
+  }
+  #main-content .headerbox .headerbanner {
+    position: absolute;
+    bottom: -45px;
+    width: 100%;
+    z-index: 1;
+  }
+  #main-content .headerbox .headerbanner .banner01 {
+    background-size: cover;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-design1-medium-up.png");
+    transform: rotate(1deg);
+    transform-origin: 111% 50%;
+    z-index: 2;
+  }
+  #main-content .headerbox .headerbanner .banner02 {
+    background-size: cover;
+    top: 70px;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-green-medium-up.png");
+    transform: rotate(-1deg);
+    transform-origin: -50% 50%;
+    z-index: 2;
+  }
+  #main-content .maintool .List01 {
+    position: relative;
+    height: 340vh;
+    background-position: top;
+    background-image: url("../../public/img/home/tapes-black.jpg");
+  }
+  #main-content .maintool .List01 .Lvideo01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 200px;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 {
+    position: relative;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element01 picture .tape1 {
+    width: 67px;
+    position: absolute;
+    top: 1.8rem;
+    left: 0.4rem;
+    z-index: 4;
+    transform: rotate(-21deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element01 picture .tape2 {
+    width: 67px;
+    position: absolute;
+    top: 16rem;
+    right: 0rem;
+    transform: rotate(341deg);
+    z-index: 4;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 {
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0 calc(var(8px, 8px) * 6) 0;
+    position: relative;
+    width: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner {
+    background: #ff505e;
+    display: inline-block;
+    transform: rotate(-4deg);
+    z-index: 4;
+    text-align: center;
+    line-height: 1;
+    position: relative;
+    top: 22px;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner h2 {
+    font-family: "s4";
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 13px 30px 14px;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner::before {
+    content: "";
+    background-position: 100%;
+    left: -61px;
+    width: 62px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    position: absolute;
+    background-image: url(../../public/img//home/left-tape-red.svg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .titlebanner::after {
+    content: "";
+    background-position: 0;
+    right: -58px;
+    top: 0;
+    width: 59px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    position: absolute;
+    background-image: url(../../public/img//home/right-tape-red.svg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button {
+    width: 90%;
+    z-index: 3;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    transform: rotate(3deg);
+    border: 5px solid white;
+    display: inline-block;
+    padding: 0;
+    left: 20px;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton {
+    bottom: 0;
+    left: 50%;
+    margin: 10% 0 auto;
+    top: 0;
+    color: rgba(41, 41, 41, 0.3176470588);
+    transform: translate(-50%, -10%);
+    width: 40%;
+    z-index: 10;
+    position: absolute;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton .one {
+    border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+    width: 160px;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.6901960784);
+    -webkit-animation: wave 8s ease-in-out infinite;
+            animation: wave 8s ease-in-out infinite;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @-webkit-keyframes wave {
+    100% {
+      border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+    }
+    50% {
+      border-radius: 77% 23% 54% 46%/40% 38% 62% 60%;
+    }
+    25% {
+      border-radius: 80% 27% 60% 36%/32% 44% 52% 50%;
+    }
+    0% {
+      border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+    }
+  }
+  @keyframes wave {
+    100% {
+      border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+    }
+    50% {
+      border-radius: 77% 23% 54% 46%/40% 38% 62% 60%;
+    }
+    25% {
+      border-radius: 80% 27% 60% 36%/32% 44% 52% 50%;
+    }
+    0% {
+      border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+    }
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button .buton .plays {
+    position: absolute;
+    top: 26px;
+    left: 51px;
+    font-size: 0.8em;
+    color: #6af7ce;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button picture {
+    display: block;
+    margin: 0 auto;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool01 .element03 .inview button picture .videot {
+    width: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 {
+    margin: 145px auto;
+    width: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .element06 picture {
+    top: 539px;
+    width: 218px;
+    position: absolute;
+    right: -9;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .element06 picture img {
+    width: 100%;
+    height: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 {
+    display: flex;
+    flex-direction: column;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 {
+    width: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    font-family: "s1";
+    width: 90%;
+    height: 257px;
+    background-color: black;
+    padding: 20px;
+    top: 45px;
+    left: 26px;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07::before {
+    background-repeat: repeat-y;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -2em;
+    width: 40px;
+    z-index: -1;
+    background-image: url("../../public/img/home/left-black-tape-container.svg");
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07::after {
+    background-repeat: repeat-y;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 347px;
+    width: 40px;
+    z-index: -1;
+    background-image: url("../../public/img/home/right-black-tape-container.svg");
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 h2 {
+    position: absolute;
+    top: -80px;
+    display: flex;
+    flex-direction: column;
+    white-space: pre-wrap;
+    margin: auto;
+    transform: rotate(-5deg);
+    color: #ff9750;
+    z-index: 1;
+    font-size: 40px;
+    text-align: center;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 h2 span {
+    color: white;
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 p {
+    font-family: "s2";
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink {
+    font-family: "s2";
+    font-weight: 700;
+    font-size: 1.4rem;
+    background: #af50ff;
+    width: 350px;
+    height: 60px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1em;
+    border: none;
+    white-space: nowrap;
+    color: black;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:hover {
+    background-position: 500% 100%;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(1) {
+    filter: hue-rotate(20deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(2) {
+    filter: hue-rotate(40deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(3) {
+    filter: hue-rotate(60deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(4) {
+    filter: hue-rotate(80deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(5) {
+    filter: hue-rotate(100deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(6) {
+    filter: hue-rotate(120deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(7) {
+    filter: hue-rotate(140deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(8) {
+    filter: hue-rotate(160deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(9) {
+    filter: hue-rotate(180deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(10) {
+    filter: hue-rotate(200deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(11) {
+    filter: hue-rotate(220deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(12) {
+    filter: hue-rotate(240deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(13) {
+    filter: hue-rotate(260deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(14) {
+    filter: hue-rotate(280deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(15) {
+    filter: hue-rotate(300deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(16) {
+    filter: hue-rotate(320deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(17) {
+    filter: hue-rotate(340deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink:nth-child(18) {
+    filter: hue-rotate(360deg);
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element07 .bo07 .noLink a {
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .tape078 {
+    position: relative;
+    top: 66px;
+    right: -150px;
+    z-index: 1;
+    height: 50px;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .tape078 .tape01 {
+    height: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element08 {
+    transform: rotate(5deg);
+    border: 8px solid white;
+    width: 94%;
+    height: 250px;
+    margin: 0 auto;
+    position: relative;
+    top: 37px;
+  }
+  #main-content .maintool .List01 .Lvideo01 .Ltool02 .elementbox78 .element08 picture .imgs3 {
+    width: 100%;
+    height: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    flex-direction: column;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 {
+    position: relative;
+    transform: rotate(-2deg);
+    width: 50%;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox {
+    position: relative;
+    height: 100%;
+    left: 45%;
+    top: 0;
+    width: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .bluemo {
+    position: absolute;
+    top: -236px;
+    left: -86px;
+    width: 391px;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .a {
+    opacity: 0;
+    position: absolute;
+    left: 261px;
+    top: 118px;
+    transform: translate(-102%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .a h2 {
+    left: 4em;
+    top: 3.3em;
+    width: 300px;
+    color: white;
+    font-weight: 800;
+    font-family: "s2";
+    font-size: 21px;
+    text-align: center;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .a video {
+    width: 300px;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .a .noLink02 {
+    font-family: "s2";
+    font-weight: 700;
+    font-size: 1.4rem;
+    top: 29rem;
+    left: 19.2rem;
+    background: #eaff3d;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1em;
+    white-space: nowrap;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+    align-items: center;
+    justify-content: center;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .a .noLink02 a {
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .a .noLink02:hover {
+    background-position: 500% 100%;
+    border: 2px solid white;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .a .noLink02:hover a {
+    color: white;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox01 .bluebox .active {
+    -webkit-animation: bluebox01 0.5s ease-in-out forwards;
+            animation: bluebox01 0.5s ease-in-out forwards;
+  }
+  @-webkit-keyframes bluebox01 {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes bluebox01 {
+    to {
+      opacity: 1;
+    }
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 {
+    width: 50%;
+    position: relative;
+    transform: translate(0%, -10%) rotate(2deg);
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .reamonmo {
+    position: absolute;
+    top: 236px;
+    left: 26px;
+    width: 391px;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .reamonmo .st02 {
+    fill: #eaff3d;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .b {
+    opacity: 0;
+    position: relative;
+    left: 325px;
+    bottom: -593px;
+    transform: translate(-102%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .b h2 {
+    width: 300px;
+    color: black;
+    font-weight: 800;
+    font-family: "s2";
+    font-size: 21px;
+    text-align: center;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .b video {
+    width: 300px;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .b .noLink03 {
+    color: white;
+    font-family: "s2";
+    font-weight: 700;
+    font-size: 1.4rem;
+    background: #603bff;
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1em;
+    white-space: nowrap;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .b .noLink03 a {
+    color: white;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .b .noLink03:hover {
+    background-position: 500% 100%;
+    border: 2px solid black;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .b .noLink03:hover a {
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo02 .bluereamo .colorbox02 .reamonbox .active {
+    -webkit-animation: remobox01 0.5s ease-in-out forwards;
+            animation: remobox01 0.5s ease-in-out forwards;
+  }
+  @-webkit-keyframes remobox01 {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes remobox01 {
+    to {
+      opacity: 1;
+    }
+  }
+  #main-content .maintool .List01 .Lvideo02 .back02 {
+    position: relative;
+    width: 100%;
+  }
+  #main-content .maintool .List01 .Lvideo02 .back02 .backbanner {
+    position: relative;
+    width: 450px;
+    z-index: 1;
+    bottom: -563px;
+    left: -6px;
+  }
+  #main-content .maintool .List01 .Lvideo02 .back02 .backbanner .baner2me {
+    background-size: cover;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-design2-medium-up.png");
+    transform: rotate(1deg);
+    transform-origin: 111% 50%;
+  }
+  #main-content .maintool .List01 .Lvideo02 .back02 .backbanner .baner3me {
+    background-size: cover;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-green-medium-up.png");
+    transform: rotate(-1deg);
+    transform-origin: -50% 50%;
+  }
+  #main-content .maintool .List01 .Lvideo02 .back02 picture .backs02 {
+    position: absolute;
+    top: 421px;
+    right: 31px;
+    width: 235px;
+  }
+  #main-content .maintool .List01 .Lvideo03 {
+    position: relative;
+    top: 275px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .banerover {
+    position: relative;
+    top: 90rem;
+  }
+  #main-content .maintool .List01 .Lvideo03 .banerover .banerover01 {
+    height: 110px;
+    background-image: url("../../public/img/home/banner-design2-medium-up-2x.png");
+    transform: rotate(0.8deg);
+    transform-origin: 90% 50%;
+  }
+  #main-content .maintool .List01 .Lvideo03 .banerover .banerover02 {
+    height: 110px;
+    background-image: url("../../public/img/home/banner-green-medium-up-2x.png");
+    transform: rotate(-1deg);
+    transform-origin: 10% 50%;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rownews {
+    position: absolute;
+    top: 146rem;
+    left: 50%;
+    text-align: 0 auto;
+    /* width: 100%; */
+    transform: translateX(-50%);
+  }
+  #main-content .maintool .List01 .Lvideo03 .rownews .stickertitle picture .t01 {
+    position: absolute;
+    width: 200px;
+    top: 3.4rem;
+    left: 0rem;
+    transform: rotate(352deg);
+  }
+  #main-content .maintool .List01 .Lvideo03 .rownews .stickertitle picture .t02 {
+    width: 350px;
+    left: 1rem;
+    top: -1rem;
+    transform: rotate(-4deg);
+    position: absolute;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rownews .stickername {
+    transform: rotate(-4deg);
+    background-color: white;
+    position: relative;
+    width: 350px;
+    height: 69px;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 500;
+    font-family: "s1";
+  }
+  #main-content .maintool .List01 .Lvideo03 .row {
+    display: flex;
+    align-items: center;
+    margin-top: 112px;
+    justify-content: center;
+    position: relative;
+    top: 400px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .row .rowtext a {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "s4";
+    color: white;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rot {
+    position: relative;
+    opacity: 0;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rot .t03 {
+    width: 216px;
+    left: -40px;
+    top: -5px;
+    transform: rotate(158deg);
+    position: absolute;
+  }
+  #main-content .maintool .List01 .Lvideo03 .active {
+    -webkit-animation: rot03 0.5s ease-in-out forwards;
+            animation: rot03 0.5s ease-in-out forwards;
+  }
+  @-webkit-keyframes rot03 {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes rot03 {
+    to {
+      opacity: 1;
+    }
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg {
+    transform: translate(0px, 0px, 0px);
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 {
+    position: relative;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01:hover {
+    transform: rotate(1deg);
+    transition: 0.3s ease-in-out;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .slick-track {
+    margin-top: 446px;
+    margin-left: 9px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting01 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: -1.1rem;
+    width: 130px;
+    left: 2rem;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting02 {
+    position: absolute;
+    top: 70px;
+    left: 35px;
+    width: 330px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting03 {
+    position: absolute;
+    top: 277px;
+    left: 35px;
+    width: 330px;
+    font-family: "s4";
+    font-weight: 500;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting03 a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting04 {
+    position: absolute;
+    top: 373px;
+    left: 35px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state01 .menobox .pasting05 {
+    position: absolute;
+    top: 402px;
+    right: 100px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 {
+    position: relative;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02:hover {
+    transform: rotate(3deg);
+    transition: 0.3s ease-in-out;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting01 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: -1.1rem;
+    width: 130px;
+    left: 2rem;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting02 {
+    position: absolute;
+    top: 70px;
+    left: 35px;
+    width: 330px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting03 {
+    position: absolute;
+    top: 277px;
+    left: 35px;
+    width: 330px;
+    font-family: "s4";
+    font-weight: 500;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting03 a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting04 {
+    position: absolute;
+    top: 373px;
+    left: 35px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state02 .menobox .pasting05 {
+    position: absolute;
+    top: 402px;
+    right: 100px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 {
+    position: relative;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03:hover {
+    transform: rotate(3deg);
+    transition: 0.3s ease-in-out;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting01 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: -1.1rem;
+    width: 130px;
+    left: 2rem;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting02 {
+    position: absolute;
+    top: 70px;
+    left: 35px;
+    width: 330px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting03 {
+    position: absolute;
+    top: 277px;
+    left: 35px;
+    width: 330px;
+    font-family: "s4";
+    font-weight: 500;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting03 a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting04 {
+    position: absolute;
+    top: 373px;
+    left: 35px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state03 .menobox .pasting05 {
+    position: absolute;
+    top: 402px;
+    right: 100px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 {
+    position: relative;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04:hover {
+    transform: rotate(3deg);
+    transition: 0.3s ease-in-out;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting01 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: -1.1rem;
+    width: 130px;
+    left: 2rem;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting02 {
+    position: absolute;
+    top: 70px;
+    left: 35px;
+    width: 330px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting03 {
+    position: absolute;
+    top: 277px;
+    left: 35px;
+    width: 330px;
+    font-family: "s4";
+    font-weight: 500;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting03 a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting04 {
+    position: absolute;
+    top: 373px;
+    left: 35px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state04 .menobox .pasting05 {
+    position: absolute;
+    top: 402px;
+    right: 100px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 {
+    position: relative;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05:hover {
+    transform: rotate(3deg);
+    transition: 0.3s ease-in-out;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting01 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: -1.1rem;
+    width: 130px;
+    left: 2rem;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting02 {
+    position: absolute;
+    top: 70px;
+    left: 35px;
+    width: 330px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting03 {
+    position: absolute;
+    top: 277px;
+    left: 35px;
+    width: 330px;
+    font-family: "s4";
+    font-weight: 500;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting03 a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting04 {
+    position: absolute;
+    top: 373px;
+    left: 35px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state05 .menobox .pasting05 {
+    position: absolute;
+    top: 402px;
+    right: 100px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 {
+    position: relative;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06:hover {
+    transform: rotate(3deg);
+    transition: 0.3s ease-in-out;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting01 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: -1.1rem;
+    width: 130px;
+    left: 2rem;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting02 {
+    position: absolute;
+    top: 70px;
+    left: 35px;
+    width: 330px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting03 {
+    position: absolute;
+    top: 277px;
+    left: 35px;
+    width: 330px;
+    font-family: "s4";
+    font-weight: 500;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting03 a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting04 {
+    position: absolute;
+    top: 373px;
+    left: 35px;
+  }
+  #main-content .maintool .List01 .Lvideo03 .rowimg .rowimgbox .state06 .menobox .pasting05 {
+    position: absolute;
+    top: 402px;
+    right: 100px;
+  }
+  #main-content .maintool .List02 {
+    position: relative;
+    background-color: #ff505e;
+    height: 135vh;
+  }
+  #main-content .maintool .List02 .pinkb {
+    width: 1440px;
+    margin: 0 auto;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup {
+    display: flex;
+    flex-direction: column;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .left {
+    display: flex;
+    flex-grow: 0;
+    width: 55%;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .left .leftbox {
+    width: 100%;
+    position: relative;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .left .leftbox picture .leftimg01 {
+    position: absolute;
+    top: 1rem;
+    left: 6%;
+    width: 20%;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .left .leftbox picture .leftimg02 {
+    position: absolute;
+    top: 2rem;
+    left: 312px;
+    width: 9%;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .left .leftbox picture .leftimg03 {
+    position: absolute;
+    top: 2rem;
+    left: 5%;
+    width: 45%;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    position: relative;
+    left: -94px;
+    bottom: -260px;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .righttitle {
+    white-space: pre-wrap;
+    font-family: "s1";
+    font-size: 2rem;
+    width: 400px;
+    text-align: center;
+    margin: 0.5em 0;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .rigntbox {
+    width: 385px;
+    height: 670px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .rigntbox iframe {
+    width: 365px;
+    height: 650px;
+    border-radius: 10px;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter {
+    background-color: #1da1f2;
+    width: 320px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "s4";
+    font-weight: 700;
+    font-size: 20px;
+    white-space: nowrap;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter .twitterbox {
+    width: 20px;
+    display: block;
+    color: white;
+    margin: 2px 30px;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter .twitterbox #tw {
+    fill: white;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter .twitterbox .iconright {
+    margin-left: 6px;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter:hover {
+    background-color: white;
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 255, 255));
+    background-position: 500% 100%;
+    border: 2px solid #1da1f2;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter:hover #tw {
+    fill: #1da1f2;
+  }
+  #main-content .maintool .List02 .pinkb .pinkgroup .right .twitter:hover a {
+    color: #1da1f2;
+  }
+  #main-content .maintool .List03 {
+    position: relative;
+    overflow: hidden;
+  }
+  #main-content .maintool .List03 .List03back {
+    height: 240vh;
+    background-image: url("../../public/img/home/camo-black-2x.png");
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #main-content .maintool .List03 .List03back .listfront {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #main-content .maintool .List03 .List03back .listfront .frontink {
+    position: inherit;
+  }
+  #main-content .maintool .List03 .List03back .listfront .frontink .foink1 {
+    width: 150px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+  }
+  #main-content .maintool .List03 .List03back .listfront .frontink .foink2 {
+    width: 180px;
+    position: absolute;
+    top: 50px;
+    left: 143px;
+  }
+  #main-content .maintool .List03 .List03back .listfront .frontink .foink3 {
+    position: absolute;
+    width: 200px;
+    top: 137px;
+    left: 136px;
+    transform: rotate(227deg);
+  }
+  #main-content .maintool .List03 .List03back .listfront .frontink .foink4 {
+    position: absolute;
+    top: 700px;
+    left: 631px;
+    width: 350px;
+  }
+  #main-content .maintool .List03 .List03back .listfront .frontink .foink5 {
+    position: absolute;
+    right: -42px;
+    top: 624px;
+    width: 400px;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listleft {
+    width: 55%;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox {
+    width: 100%;
+    position: relative;
+    top: 100px;
+    height: 100%;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game01 {
+    position: absolute;
+    width: 19%;
+    top: -5rem;
+    left: 5%;
+    transform: rotate(-10deg);
+  }
+  #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game02 {
+    position: absolute;
+    width: 42%;
+    top: -11rem;
+    left: 11%;
+    transform: rotate(2.4deg);
+  }
+  #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game03 {
+    position: absolute;
+    width: 31%;
+    top: 70%;
+    left: 25%;
+    transform: rotate(1deg);
+  }
+  #main-content .maintool .List03 .List03back .listfront .listleft .listleftbox picture .game04 {
+    position: absolute;
+    width: 200px;
+    top: 473px;
+    left: 126px;
+    transform: rotate(26deg);
+  }
+  #main-content .maintool .List03 .List03back .listfront .listright {
+    width: 600px;
+    position: relative;
+    top: 320px;
+    right: 90px;
+    text-align: center;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listright .righttext {
+    font-family: "s1";
+    transform: rotate(-5deg);
+    color: #eaff3d;
+    font-weight: 500;
+    font-size: 40px;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listright .righttext .vartext {
+    color: white;
+    display: block;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listright p {
+    font-family: "s3";
+    margin: 1em 0;
+    color: white;
+    font-size: 15px;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listright .listrighta {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listright .listrighta a .vartext02 {
+    background-color: #eaff3d;
+    flex: 1 1;
+    width: 360px;
+    height: 60px;
+    display: flex;
+    border-radius: 10px;
+    font-family: "s4";
+    font-size: 20px;
+    border: none;
+    white-space: nowrap;
+    color: black;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+    align-items: center;
+    justify-content: center;
+  }
+  #main-content .maintool .List03 .List03back .listfront .listright .listrighta a .vartext02:hover {
+    background-position: 500% 100%;
+  }
+  #main-content .maintool .List03 .List03back .banner03 {
+    position: relative;
+    top: 290px;
+    width: 100%;
+  }
+  #main-content .maintool .List03 .List03back .banner03 .bannery {
+    background-size: cover;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-design1-medium-up.png");
+    transform: rotate(1.5deg);
+    transform-origin: 90% 50%;
+  }
+  #main-content .maintool .List03 .List03back .banner03 .bannerp {
+    background-size: cover;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-purple-medium-up.png");
+    transform: rotate(-1deg);
+    transform-origin: 5% 50%;
+  }
+  #main-content .maintool .List03 .List03back .listback {
+    position: relative;
+  }
+  #main-content .maintool .List03 .List03back .listback .backonlu picture .onlysti {
+    position: absolute;
+    top: 188px;
+    left: -22px;
+    width: 500px;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    align-content: center;
+    align-items: center;
+    z-index: 1;
+    opacity: 0;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .only {
+    font-family: "s1";
+    color: #ff9750;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    transform: rotate(-4deg);
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .only .only01 {
+    font-size: 2.5rem;
+    color: white;
+    width: 99%;
+    text-align: center;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlybox {
+    padding-top: 80px;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlybox picture .onlyback {
+    height: 500px;
+    width: 340px;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlybox picture .only01 {
+    position: absolute;
+    left: 6rem;
+    top: 25rem;
+    width: 200px;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlybox picture .only02 {
+    position: absolute;
+    left: 6rem;
+    top: 15rem;
+    width: 200px;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlybox picture .only03 {
+    position: absolute;
+    left: 6.7rem;
+    top: 33rem;
+    width: 200px;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu p {
+    padding: 44px 12px 15px;
+    text-align: center;
+    font-family: "s3";
+    color: white;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlyclick {
+    font-family: "s4";
+    font-weight: 700;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlyclick .onlyspan {
+    background-color: #eaff3d;
+    flex: 1 1;
+    width: 300px;
+    height: 55px;
+    display: flex;
+    /* padding: 25px 50px; */
+    border-radius: 10px;
+    font-family: "s4";
+    font-size: 20px;
+    border: none;
+    white-space: nowrap;
+    color: black;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+    align-items: center;
+    justify-content: center;
+  }
+  #main-content .maintool .List03 .List03back .listback .fronolu .onlyclick .onlyspan:hover {
+    background-position: 500% 100%;
+  }
+  #main-content .maintool .List03 .List03back .listback .active {
+    -webkit-animation: fron 0.5s ease-in-out forwards;
+            animation: fron 0.5s ease-in-out forwards;
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+  }
+  @-webkit-keyframes fron {
+    to {
+      opacity: 1;
+      -webkit-animation-delay: 5s;
+              animation-delay: 5s;
+    }
+  }
+  @keyframes fron {
+    to {
+      opacity: 1;
+      -webkit-animation-delay: 5s;
+              animation-delay: 5s;
+    }
+  }
+  #main-content .maintool .List03 .List03back .listback .inkrgb {
+    position: relative;
+    opacity: 0;
+  }
+  #main-content .maintool .List03 .List03back .listback .inkrgb picture .in1 {
+    position: absolute;
+    width: 400px;
+    right: -527px;
+    bottom: -264px;
+    transform: rotate(326deg);
+  }
+  #main-content .maintool .List03 .List03back .listback .inkrgb picture .in2 {
+    position: absolute;
+    bottom: 377px;
+    right: 0px;
+    width: 200px;
+  }
+  #main-content .maintool .List03 .List03back .listback .inkrgb picture .in3 {
+    position: absolute;
+    left: -532px;
+    top: -1000px;
+  }
+  #main-content .maintool .List03 .List03back .listback .inkrgb picture .in4 {
+    position: absolute;
+    left: -487px;
+    top: -700px;
+  }
+  #main-content .maintool .List03 .List03back .listback .active {
+    -webkit-animation: inkt 0.5s ease-in-out forwards;
+            animation: inkt 0.5s ease-in-out forwards;
+  }
+  @-webkit-keyframes inkt {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes inkt {
+    to {
+      opacity: 1;
+    }
+  }
+  #main-content .maintool .List04 {
+    height: 100vh;
+    background-image: url("../../public/img/home/tapes-purple.jpg");
+  }
+  #main-content .maintool .List04 .banner04 .bannerb {
+    background-size: cover;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-design3-medium-up.png");
+    transform: rotate(-1deg);
+    transform-origin: -100% 50%;
+  }
+  #main-content .maintool .List04 .banner04 .bannerg {
+    background-size: cover;
+    height: 45px;
+    background-image: url("../../public/img/home/banner-yellow-medium-up.png");
+    transform: rotate(1deg);
+    transform-origin: 260% 50%;
+  }
+  #main-content .maintool .List04 .bluestc {
+    width: 1440px;
+    margin: 0 auto;
+    height: 70%;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column-reverse;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft {
+    position: relative;
+    width: 415px;
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 48px;
+    top: 200px;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft h2 {
+    margin-top: 20px;
+    color: #eaff3d;
+    font-size: 4rem;
+    font-family: "s1";
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 22rem;
+    margin-top: 20px;
+    color: white;
+    font-family: "s3";
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(1) .mon {
+    fill: #EAFF3C;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(1) .non {
+    fill: #81C32C;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(2) {
+    margin-left: 10px;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(2) .mon {
+    fill: #FF585E;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(2) .non {
+    fill: #B62E35;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(3) {
+    margin-left: 10px;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(3) .mon {
+    fill: #FF9750;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(3) .non {
+    fill: #CB6B15;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(4) {
+    margin-left: 10px;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(4) .mon {
+    fill: #6AF7CE;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(4) .non {
+    fill: #00A0AA;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(5) {
+    margin-left: 10px;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(5) .mon {
+    fill: #AF50FF;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .monnimg .mon01:nth-child(5) .non {
+    fill: #5E3F94;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .inboxa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .inboxa .inbox {
+    background-color: #eaff3d;
+    display: flex;
+    padding: 20px 140px;
+    border-radius: 10px;
+    font-family: "s4";
+    font-size: 20px;
+    border: none;
+    white-space: nowrap;
+    color: black;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+    align-items: center;
+    justify-content: center;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .inboxa .inbox:hover {
+    background-position: 500% 100%;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .doin {
+    display: flex;
+    justify-content: center;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .doin .dodo {
+    text-decoration: underline;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .doout {
+    display: flex;
+    justify-content: center;
+    font-size: 1px;
+    flex-direction: row;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueleft .content-spacing .doout .inboxb .dodo {
+    color: white;
+    text-decoration: underline;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueright {
+    position: relative;
+    width: 30%;
+    top: -156px;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueright picture .char8 {
+    position: absolute;
+    left: 12px;
+    top: -10%;
+    width: 50%;
+  }
+  #main-content .maintool .List04 .bluestc .bluestcbox .blueright picture .char9 {
+    position: absolute;
+    left: 28%;
+    top: 12%;
+    width: 62%;
+  }
+  #main-content .footerbox {
+    height: 80vh;
+    background-color: black;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  #main-content .footerbox .foimgback .inkfoterleft picture .o01 {
+    display: none;
+    width: 100px;
+    position: absolute;
+    left: 15rem;
+    top: 8rem;
+    transform: rotate(-10deg);
+  }
+  #main-content .footerbox .foimgback .inkfoterleft picture .o02 {
+    position: absolute;
+    left: -11rem;
+    top: 32rem;
+    width: 18rem;
+    transform: rotate(240deg);
+  }
+  #main-content .footerbox .foimgback .inkfoterleft picture .o03 {
+    display: none;
+    position: absolute;
+    left: 6rem;
+    top: 26rem;
+    transform: rotate(328deg);
+  }
+  #main-content .footerbox .foimgback .inkfoterright picture .o04 {
+    display: none;
+    width: 150px;
+    position: absolute;
+    right: 10rem;
+    top: 8rem;
+    transform: rotate(10deg);
+  }
+  #main-content .footerbox .foimgback .inkfoterright picture .o05 {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 14rem;
+    width: 19rem;
+  }
+  #main-content .footerbox .foimgback .inkfoterright picture .o06 {
+    position: absolute;
+    right: -5rem;
+    top: 35rem;
+    width: 15rem;
+    transform: rotate(322deg);
+  }
+  #main-content .footerbox .fotextback .foterbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  #main-content .footerbox .fotextback .foterbtn button {
+    padding: 15px 110px;
+    border-radius: 10px;
+    font-family: "s4";
+    font-size: 20px;
+    border: none;
+    white-space: nowrap;
+    color: #eaff3d;
+    background-color: #603bff;
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    filter: hue-rotate(10deg);
+  }
+  #main-content .footerbox .fotextback .foterbtn button:hover {
+    background-position: 500% 100%;
+  }
+  #main-content .footerbox .fotextback .text-back {
+    margin: 30px 30px 0;
+    font-size: 14px;
+  }
+  #main-content .footerbox .fotextback .text-back .ptag {
+    gap: 15px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #main-content .footerbox .fotextback .text-back .ptag p {
+    font-size: 2px;
+  }
+  #main-content .footerbox .fotextback .text-back .ptag p a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #main-content .footerbox .fotextback .text-back .ptag p a span {
+    color: white;
+    text-decoration: underline;
+  }
+  #main-content .footerbox .fotextback .img-back {
+    margin-top: 25px;
+    color: white;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #main-content .footerbox .fotextback .img-back .endleft {
+    text-align: center;
+    font-weight: 500;
+  }
+  #main-content .footerbox .fotextback .img-back .endleft .leftfoll {
+    padding-bottom: 20px;
+  }
+  #main-content .footerbox .fotextback .img-back .endleft .foll img {
+    margin: 0 12px;
+    width: 50px;
+    border-radius: 5px;
+  }
+  #main-content .footerbox .fotextback .img-back .endrignt {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  #main-content .footerbox .fotextback .img-back .endrignt .whbox {
+    width: 12rem;
+    height: 5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+  #main-content .footerbox .fotextback .img-back .endrignt .whbox .en {
+    height: 5rem;
+  }
+  #main-content .footerbox .fotextback .img-back .endrignt .whbox p {
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+  }
+  #main-content .footerbox .fotextback .img-back .endrignt .esrb {
+    height: 5rem;
+  }
+  #main-content .footerbox .fotextback .endbox {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  #main-content .footerbox .fotextback .endbox .linka {
+    gap: 11px;
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    text-align: center;
+  }
+  #main-content .footerbox .fotextback .endbox .linka a span {
+    color: white;
+  }
+  #main-content .footerbox .fotextback .endbox .endtext {
+    margin-top: 30px;
+    color: white;
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=Home.css.map */

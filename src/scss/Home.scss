@@ -1,6 +1,6 @@
 @import "reset.css";
 @import "font.css";
-
+@import '../scss/variable.scss';
 
 body {
     overflow-x: hidden;
@@ -481,6 +481,8 @@ body {
                     .element05 {}
 
                     .element06 {
+                        position: relative;
+
                         picture {
                             position: absolute;
                             right: 0;
@@ -2256,4 +2258,2345 @@ body {
         }
     }
 
+}
+
+@include mobile {
+    body {
+        overflow-x: hidden;
+    }
+
+
+    #main-content {
+        //overflow: hidden;
+
+        .headerbox {
+            position: relative;
+            z-index: 2;
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                display: none;
+            }
+
+            .groupback {
+                pointer-events: none;
+                position: relative;
+                width: 100%;
+                margin: 0 auto;
+                height: 100%;
+
+                .groupback ::before {
+                    content: "";
+                    display: block;
+                }
+
+                .backpage {
+                    opacity: 1;
+
+                    picture {
+
+                        .backimg {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                }
+
+                .calamarimotion01 {
+
+                    position: absolute;
+                    right: 15%;
+                    bottom: 13%;
+
+                    picture {
+                        .motion01 {
+                            opacity: 0;
+                            width: 170px;
+                            max-width: 100%;
+                            height: auto;
+                            animation: mon1 .3s ease-in forwards;
+                        }
+
+                        @keyframes mon1 {
+                            to {
+                                opacity: 1;
+                                transform: translate(70%, -80%);
+                            }
+                        }
+
+                    }
+                }
+
+                .calamarimotion02 {
+
+                    position: absolute;
+                    left: 0;
+                    top: 38%;
+
+                    picture {
+
+                        .motion02 {
+                            opacity: 0;
+                            width: 130px;
+                            max-width: 100%;
+                            height: auto;
+                            animation: mon2 .3s ease-in forwards;
+                            animation-delay: .3s;
+                        }
+
+                        @keyframes mon2 {
+                            to {
+                                opacity: 1;
+                                transform: translate(-10%, -40%);
+                            }
+                        }
+                    }
+                }
+
+
+                .calamarimotion03 {
+
+                    position: absolute;
+                    left: 10%;
+                    bottom: 15%;
+
+                    picture {
+                        .motion03 {
+                            opacity: 0;
+                            width: 110px;
+                            max-width: 100%;
+                            height: auto;
+                            animation: mon3 .3s ease-in forwards;
+                            animation-delay: .6s;
+                        }
+
+                        @keyframes mon3 {
+                            to {
+                                opacity: 1;
+                                transform: translate(100%, -150%);
+                            }
+                        }
+                    }
+                }
+
+                .calamarimotion04 {
+
+                    position: absolute;
+                    left: -20%;
+                    bottom: 100px;
+
+                    picture {
+                        .motion04 {
+                            opacity: 0;
+                            width: 550px;
+                            max-width: 100%;
+                            height: auto;
+                            animation: mon4 .3s ease-in forwards;
+                            animation-delay: .9s;
+                        }
+
+                        @keyframes mon4 {
+                            to {
+                                opacity: 1;
+                                transform: translate(20%, -15%);
+                            }
+                        }
+                    }
+                }
+
+                .calamarimotion05 {
+                    opacity: 1;
+                    position: absolute;
+                    left: -50rem;
+                    top: 8rem;
+
+                    picture {
+                        .motion05 {
+                            width: 816px;
+                            max-width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+
+
+            }
+
+            .homelogo {
+                animation: logobtn 1s ease-out forwards;
+                animation-delay: 1s;
+                opacity: 0;
+                position: absolute;
+                right: 3%;
+                top: 185px;
+                pointer-events: fill;
+
+                .stagger {}
+
+                .view {
+
+                    picture {
+                        .pos {
+                            width: 560px;
+                            //border-style: none;
+                            max-width: 100%;
+                        }
+                    }
+
+                }
+
+                .relatext {
+                    position: relative;
+                    right: -58px;
+                    top: -13px;
+
+
+                    picture {
+                        .tape1 {
+                            transform: rotate(10deg);
+                        }
+                    }
+
+                    a {
+
+                        position: absolute;
+                        left: 73px;
+                        top: -18px;
+
+
+                        .aip {}
+
+                        .wrapper {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-flow: wrap;
+
+                            button {
+                                flex: 1;
+                                padding: 15px 40px;
+                                border-radius: 15px;
+                                font-family: "s4";
+                                font-size: 20px;
+                                border: none;
+                                white-space: nowrap;
+                                color: black;
+                                background: #eaff3d;
+                                background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                background-repeat: repeat-x;
+                                background-position: 0 -100%;
+                                transition: 1.5s ease;
+                                filter: hue-rotate(10deg);
+
+                                &:hover {
+                                    background-position: 500% 100%;
+                                }
+
+                                // @for $i from 1 through 18 {
+                                //     &:nth-child(#{$i}) {
+                                //         filter: hue-rotate(($i * 20) + deg);
+                                //     }
+                                // }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+
+            @keyframes logobtn {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .headerbanner {
+                position: absolute;
+                bottom: -45px;
+                width: 100%;
+                z-index: 1;
+
+                .banner01 {
+                    background-size: cover;
+                    height: 45px;
+                    background-image: url("../../public/img/home/banner-design1-medium-up.png");
+                    transform: rotate(1deg);
+                    transform-origin: 111% 50%;
+                    z-index: 2;
+                }
+
+                .banner02 {
+                    background-size: cover;
+                    top: 70px;
+                    height: 45px;
+                    background-image: url("../../public/img/home/banner-green-medium-up.png");
+                    transform: rotate(-1deg);
+                    transform-origin: -50% 50%;
+                    z-index: 2;
+                }
+            }
+
+        }
+
+        .maintool {
+            // position: relative;
+            //top: -170px;
+            //height: 350vh;
+
+            .List01 {
+                position: relative;
+                height: 340vh;
+                //padding-bottom: 500px;
+                background-position: top;
+                //height: 100px;
+                background-image: url("../../public/img/home/tapes-black.jpg");
+
+                .Lvideo01 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-bottom: 200px;
+
+                    .Ltool01 {
+                        position: relative;
+                        // top: -67px;
+
+                        .element01 {
+                            picture {
+                                .tape1 {
+                                    width: 67px;
+                                    position: absolute;
+                                    top: 1.8rem;
+                                    left: 0.4rem;
+                                    z-index: 4;
+                                    transform: rotate(-21deg);
+                                }
+
+                                .tape2 {
+                                    width: 67px;
+                                    position: absolute;
+                                    top: 16rem;
+                                    right: 0rem;
+                                    transform: rotate(341deg);
+                                    z-index: 4;
+                                }
+                            }
+                        }
+
+                        .element02 {}
+
+                        .element03 {
+                            margin: 0 auto;
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            margin: 10% 0 calc(var(8px, 8px)*6)0;
+                            position: relative;
+                            width: 100%;
+
+                            .titlebanner {
+                                background: #ff505e;
+                                display: inline-block;
+                                transform: rotate(-4deg);
+                                z-index: 4;
+                                text-align: center;
+                                line-height: 1;
+                                position: relative;
+                                top: 22px;
+
+                                h2 {
+                                    font-family: "s4";
+                                    font-weight: 700;
+                                    font-size: 1.3rem;
+                                    padding: 13px 30px 14px;
+                                }
+
+                                &::before {
+                                    content: "";
+                                    background-position: 100%;
+                                    left: -61px;
+                                    width: 62px;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    height: 100%;
+                                    position: absolute;
+                                    background-image: url(../../public/img//home/left-tape-red.svg);
+                                }
+
+                                &::after {
+                                    content: "";
+                                    background-position: 0;
+                                    right: -58px;
+                                    top: 0;
+                                    width: 59px;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    height: 100%;
+                                    position: absolute;
+                                    background-image: url(../../public/img//home/right-tape-red.svg);
+                                }
+                            }
+
+                            .inview {
+                                button {
+                                    width: 90%;
+                                    z-index: 3;
+                                    position: relative;
+                                    cursor: pointer;
+                                    border: none;
+                                    transform: rotate(3deg);
+                                    border: 5px solid white;
+                                    display: inline-block;
+                                    padding: 0;
+                                    left: 20px;
+
+                                    .buton {
+                                        bottom: 0;
+                                        left: 50%;
+                                        margin: 10% 0 auto;
+                                        top: 0;
+                                        color: #29292951;
+                                        transform: translate(-50%, -10%);
+                                        width: 40%;
+                                        z-index: 10;
+                                        position: absolute;
+
+                                        .one {
+                                            border-radius: 70% 30% 72% 28% / 27% 61% 39% 73%;
+                                            width: 160px;
+                                            height: 160px;
+                                            background: #000000b0;
+                                            animation: wave 8s ease-in-out infinite;
+                                            position: absolute;
+                                            top: 0;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        }
+
+                                        @keyframes wave {
+                                            100% {
+                                                border-radius: 70% 30% 72% 28% / 27% 61% 39% 73%;
+                                            }
+
+                                            50% {
+                                                border-radius: 77% 23% 54% 46% / 40% 38% 62% 60%;
+                                            }
+
+                                            25% {
+                                                border-radius: 80% 27% 60% 36% / 32% 44% 52% 50%;
+                                            }
+
+                                            0% {
+                                                border-radius: 70% 30% 72% 28% / 27% 61% 39% 73%;
+                                            }
+                                        }
+
+                                        .plays {
+                                            position: absolute;
+                                            top: 26px;
+                                            left: 51px;
+                                            font-size: 0.8em;
+                                            color: #6af7ce;
+                                        }
+                                    }
+
+
+                                    picture {
+
+                                        display: block;
+                                        margin: 0 auto;
+
+                                        .videot {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+
+
+
+                            }
+
+                        }
+                    }
+
+                    .Ltool02 {
+                        margin: 145px auto;
+                        width: 100%;
+
+                        .element04 {}
+
+                        .element05 {}
+
+                        .element06 {
+                            picture {
+                                top: 539px;
+                                width: 218px;
+                                position: absolute;
+                                right: -9;
+
+                                //top: 30em;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+
+                        .elementbox78 {
+                            display: flex;
+                            flex-direction: column;
+
+                            .element07 {
+                                width: 100%;
+
+                                .bo07 {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    position: relative;
+                                    z-index: 2;
+                                    font-family: "s1";
+                                    width: 90%;
+                                    height: 257px;
+                                    background-color: black;
+                                    padding: 20px;
+                                    top: 45px;
+                                    left: 26px;
+
+                                    &::before {
+                                        background-repeat: repeat-y;
+                                        content: "";
+                                        height: 100%;
+                                        position: absolute;
+                                        top: 0;
+                                        left: -2em;
+                                        width: 40px;
+                                        z-index: -1;
+                                        background-image: url("../../public/img/home/left-black-tape-container.svg");
+                                    }
+
+                                    &::after {
+                                        background-repeat: repeat-y;
+                                        content: "";
+                                        height: 100%;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 347px;
+                                        width: 40px;
+                                        z-index: -1;
+                                        background-image: url("../../public/img/home/right-black-tape-container.svg");
+                                    }
+
+                                    h2 {
+                                        position: absolute;
+                                        top: -80px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        white-space: pre-wrap;
+                                        //left: 1em;
+                                        //top: -2.2em;
+                                        margin: auto;
+                                        //position: absolute;
+                                        transform: rotate(-5deg);
+                                        color: #ff9750;
+                                        z-index: 1;
+                                        font-size: 40px;
+                                        text-align: center;
+
+                                        span {
+                                            //display: block;
+                                            color: white;
+                                            font-size: 50px;
+                                            text-transform: uppercase;
+                                        }
+                                    }
+
+                                    p {
+                                        font-family: "s2";
+                                        font-size: 18px;
+                                        color: white;
+                                        width: 100%;
+                                        text-align: center;
+                                    }
+
+
+                                    .noLink {
+                                        font-family: "s2";
+                                        font-weight: 700;
+                                        font-size: 1.4rem;
+                                        //position: absolute;
+                                        //top: 10rem;
+                                        //left: 6.2rem;
+                                        background: #af50ff;
+                                        width: 350px;
+                                        height: 60px;
+                                        border-radius: 15px;
+                                        text-align: center;
+                                        padding: 1em;
+                                        border: none;
+                                        white-space: nowrap;
+                                        color: black;
+                                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                        background-repeat: repeat-x;
+                                        background-position: 0 -100%;
+                                        transition: 1.5s ease;
+                                        filter: hue-rotate(10deg);
+
+                                        &:hover {
+                                            background-position: 500% 100%;
+                                        }
+
+                                        @for $i from 1 through 18 {
+                                            &:nth-child(#{$i}) {
+                                                filter: hue-rotate(($i * 20) + deg);
+                                            }
+                                        }
+
+
+                                        a {
+                                            color: black;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .tape078 {
+                                position: relative;
+                                top: 66px;
+                                right: -150px;
+                                z-index: 1;
+                                height: 50px;
+
+                                .tape01 {
+
+                                    height: 100%;
+                                }
+                            }
+
+                            .element08 {
+                                transform: rotate(5deg);
+                                border: 8px solid white;
+                                width: 94%;
+                                height: 250px;
+                                margin: 0 auto;
+                                position: relative;
+                                top: 37px;
+
+                                picture {
+
+
+                                    .imgs3 {
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+
+
+                            }
+                        }
+
+                    }
+                }
+
+                .Lvideo02 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+
+
+                    .bluereamo {
+                        display: flex;
+                        width: 100%;
+                        margin: 0 auto;
+                        z-index: 1;
+                        flex-direction: column;
+
+                        .colorbox01 {
+                            position: relative;
+                            transform: rotate(-2deg);
+                            width: 50%;
+
+
+                            .bluebox {
+                                position: relative;
+                                height: 100%;
+                                left: 45%;
+                                top: 0;
+                                width: 100%;
+
+                                .bluemo {
+                                    position: absolute;
+                                    top: -236px;
+                                    left: -86px;
+                                    width: 391px;
+                                }
+
+                                .a {
+                                    opacity: 0;
+                                    position: absolute;
+                                    left: 261px;
+                                    top: 118px;
+                                    transform: translate(-102%, -50%);
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: 30px;
+
+
+                                    h2 {
+                                        left: 4em;
+                                        top: 3.3em;
+                                        width: 300px;
+                                        color: white;
+                                        font-weight: 800;
+                                        font-family: "s2";
+                                        font-size: 21px;
+                                        text-align: center;
+                                    }
+
+                                    video {
+                                        width: 300px;
+                                        border: 5px solid white;
+                                        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
+                                    }
+
+                                    .noLink02 {
+                                        font-family: "s2";
+                                        font-weight: 700;
+                                        font-size: 1.4rem;
+                                        top: 29rem;
+                                        left: 19.2rem;
+                                        background: #eaff3d;
+                                        width: 300px;
+                                        height: 50px;
+                                        display: flex;
+                                        border-radius: 15px;
+                                        text-align: center;
+                                        padding: 1em;
+                                        white-space: nowrap;
+                                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                        background-repeat: repeat-x;
+                                        background-position: 0 -100%;
+                                        transition: 1.5s ease;
+                                        filter: hue-rotate(10deg);
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        a {
+                                            color: black;
+                                        }
+
+                                        &:hover {
+                                            a {
+                                                color: white;
+                                            }
+
+                                            background-position: 500% 100%;
+                                            border: 2px solid white;
+                                        }
+                                    }
+                                }
+
+                                .active {
+
+                                    animation: bluebox01 0.5s ease-in-out forwards;
+                                }
+
+                                @keyframes bluebox01 {
+                                    to {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+
+
+
+
+
+
+
+
+                        }
+
+                        .colorbox02 {
+                            width: 50%;
+                            position: relative;
+                            // top: 70em;
+                            // right: 62em;
+                            transform: translate(0%, -10%) rotate(2deg);
+
+                            .reamonbox {
+                                .reamonmo {
+                                    position: absolute;
+                                    top: 236px;
+                                    left: 26px;
+                                    width: 391px;
+
+                                    .st02 {
+                                        fill: #eaff3d;
+                                    }
+                                }
+
+                                .b {
+                                    opacity: 0;
+                                    position: relative;
+                                    left: 325px;
+                                    bottom: -593px;
+                                    transform: translate(-102%, -50%);
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: 30px;
+
+                                    h2 {
+                                        width: 300px;
+                                        color: black;
+                                        font-weight: 800;
+                                        font-family: "s2";
+                                        font-size: 21px;
+                                        text-align: center;
+                                    }
+
+                                    video {
+                                        width: 300px;
+                                        border: 5px solid white;
+                                        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.678));
+                                    }
+
+                                    .noLink03 {
+                                        color: white;
+                                        font-family: "s2";
+                                        font-weight: 700;
+                                        font-size: 1.4rem;
+                                        background: #603bff;
+                                        width: 300px;
+                                        height: 50px;
+                                        border-radius: 15px;
+                                        text-align: center;
+                                        padding: 1em;
+                                        white-space: nowrap;
+                                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                        background-repeat: repeat-x;
+                                        background-position: 0 -100%;
+                                        transition: 1.5s ease;
+                                        filter: hue-rotate(10deg);
+                                        justify-content: center;
+                                        display: flex;
+                                        align-items: center;
+
+                                        a {
+                                            color: white;
+                                        }
+
+                                        &:hover {
+                                            a {
+                                                color: black;
+                                            }
+
+                                            background-position: 500% 100%;
+                                            border: 2px solid black;
+                                        }
+                                    }
+                                }
+
+                                .active {
+                                    animation: remobox01 0.5s ease-in-out forwards;
+                                }
+
+                                @keyframes remobox01 {
+                                    to {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+
+
+
+
+
+                        }
+                    }
+
+
+                    .back02 {
+                        position: relative;
+                        width: 100%;
+
+                        .backbanner {
+                            position: relative;
+                            width: 450px;
+                            z-index: 1;
+                            bottom: -563px;
+                            left: -6px;
+
+                            .baner2me {
+                                background-size: cover;
+                                height: 45px;
+                                background-image: url("../../public/img/home/banner-design2-medium-up.png");
+                                transform: rotate(1deg);
+                                transform-origin: 111% 50%;
+                            }
+
+                            .baner3me {
+                                background-size: cover;
+                                height: 45px;
+                                background-image: url("../../public/img/home/banner-green-medium-up.png");
+                                transform: rotate(-1deg);
+                                transform-origin: -50% 50%;
+                            }
+                        }
+
+                        picture {
+                            .backs02 {
+                                position: absolute;
+                                top: 421px;
+                                right: 31px;
+                                width: 235px;
+                            }
+                        }
+
+
+                    }
+                }
+
+                .Lvideo03 {
+                    position: relative;
+                    top: 275px;
+
+                    .banerover {
+                        position: relative;
+                        top: 90rem;
+
+                        .banerover01 {
+                            height: 110px;
+                            background-image: url("../../public/img/home/banner-design2-medium-up-2x.png");
+                            transform: rotate(0.8deg);
+                            transform-origin: 90% 50%;
+                        }
+
+                        .banerover02 {
+                            height: 110px;
+                            background-image: url("../../public/img/home/banner-green-medium-up-2x.png");
+                            transform: rotate(-1deg);
+                            transform-origin: 10% 50%;
+                        }
+                    }
+
+                    .rownews {
+                        position: absolute;
+                        top: 146rem;
+                        left: 50%;
+                        text-align: 0 auto;
+                        /* width: 100%; */
+                        transform: translateX(-50%);
+
+                        .stickertitle {
+
+                            picture {
+                                .t01 {
+                                    position: absolute;
+                                    width: 200px;
+                                    top: 3.4rem;
+                                    left: 0rem;
+                                    transform: rotate(352deg);
+                                }
+
+                                .t02 {
+                                    width: 350px;
+                                    left: 1rem;
+                                    top: -1rem;
+                                    transform: rotate(-4deg);
+                                    position: absolute;
+                                }
+
+
+                            }
+                        }
+
+                        .stickername {
+                            transform: rotate(-4deg);
+                            background-color: white;
+                            position: relative;
+                            width: 350px;
+                            height: 69px;
+                            display: flex;
+                            border-radius: 10px;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 38px;
+                            font-weight: 500;
+                            font-family: "s1";
+                        }
+                    }
+
+                    .row {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 112px;
+                        justify-content: center;
+                        position: relative;
+                        top: 400px;
+
+                        .rowtext {
+                            a {
+                                font-size: 22px;
+                                font-weight: 700;
+                                font-family: "s4";
+                                color: white;
+                            }
+                        }
+                    }
+
+                    .rot {
+                        position: relative;
+                        opacity: 0;
+
+
+                        .t03 {
+                            width: 216px;
+                            left: -40px;
+                            top: -5px;
+                            transform: rotate(158deg);
+                            position: absolute;
+                        }
+                    }
+
+                    .active {
+                        animation: rot03 0.5s ease-in-out forwards;
+                    }
+
+                    @keyframes rot03 {
+                        to {
+                            opacity: 1;
+                        }
+                    }
+
+                    .rowimg {
+                        transform: translate(0px, 0px, 0px);
+
+                        .rowimgbox {
+
+                            .state01 {
+                                position: relative;
+
+                                &:hover {
+                                    transform: rotate(1deg);
+                                    transition: 0.3s ease-in-out;
+                                }
+
+                                .slick-track {
+                                    margin-top: 446px;
+                                    margin-left: 9px;
+                                }
+
+                                .menojang {}
+
+                                .menobox {
+                                    .pasting01 {
+                                        transform: rotate(-10deg);
+                                        position: absolute;
+                                        top: -1.1rem;
+                                        width: 130px;
+                                        left: 2rem;
+                                    }
+
+                                    .pasting02 {
+                                        position: absolute;
+                                        top: 70px;
+                                        left: 35px;
+                                        width: 330px;
+                                    }
+
+                                    .pasting03 {
+                                        position: absolute;
+                                        top: 277px;
+                                        left: 35px;
+                                        width: 330px;
+                                        font-family: "s4";
+                                        font-weight: 500;
+
+                                        p {}
+
+                                        a {
+                                            font-size: 1.5rem;
+                                            font-weight: 700;
+                                            color: black;
+
+                                            span {}
+                                        }
+                                    }
+
+                                    .pasting04 {
+                                        position: absolute;
+                                        top: 373px;
+                                        left: 35px;
+                                    }
+
+                                    .pasting05 {
+                                        position: absolute;
+                                        top: 402px;
+                                        right: 100px;
+                                    }
+                                }
+                            }
+
+                            .state02 {
+                                position: relative;
+
+
+                                &:hover {
+                                    transform: rotate(3deg);
+                                    transition: 0.3s ease-in-out;
+                                }
+
+                                .menojang {}
+
+                                .menobox {
+                                    .pasting01 {
+                                        transform: rotate(-10deg);
+                                        position: absolute;
+                                        top: -1.1rem;
+                                        width: 130px;
+                                        left: 2rem;
+                                    }
+
+                                    .pasting02 {
+                                        position: absolute;
+                                        top: 70px;
+                                        left: 35px;
+                                        width: 330px;
+                                    }
+
+                                    .pasting03 {
+                                        position: absolute;
+                                        top: 277px;
+                                        left: 35px;
+                                        width: 330px;
+                                        font-family: "s4";
+                                        font-weight: 500;
+
+                                        p {}
+
+                                        a {
+                                            font-size: 1.5rem;
+                                            font-weight: 700;
+                                            color: black;
+
+                                            span {}
+                                        }
+                                    }
+
+                                    .pasting04 {
+                                        position: absolute;
+                                        top: 373px;
+                                        left: 35px;
+                                    }
+
+                                    .pasting05 {
+                                        position: absolute;
+                                        top: 402px;
+                                        right: 100px;
+                                    }
+                                }
+                            }
+
+                            .state03 {
+                                position: relative;
+
+                                &:hover {
+                                    transform: rotate(3deg);
+                                    transition: 0.3s ease-in-out;
+                                }
+
+                                .menojang {}
+
+                                .menobox {
+                                    .pasting01 {
+                                        transform: rotate(-10deg);
+                                        position: absolute;
+                                        top: -1.1rem;
+                                        width: 130px;
+                                        left: 2rem;
+                                    }
+
+                                    .pasting02 {
+                                        position: absolute;
+                                        top: 70px;
+                                        left: 35px;
+                                        width: 330px;
+                                    }
+
+                                    .pasting03 {
+                                        position: absolute;
+                                        top: 277px;
+                                        left: 35px;
+                                        width: 330px;
+                                        font-family: "s4";
+                                        font-weight: 500;
+
+                                        p {}
+
+                                        a {
+                                            font-size: 1.5rem;
+                                            font-weight: 700;
+                                            color: black;
+
+                                            span {}
+                                        }
+                                    }
+
+                                    .pasting04 {
+                                        position: absolute;
+                                        top: 373px;
+                                        left: 35px;
+                                    }
+
+                                    .pasting05 {
+                                        position: absolute;
+                                        top: 402px;
+                                        right: 100px;
+                                    }
+                                }
+                            }
+
+                            .state04 {
+                                position: relative;
+
+                                &:hover {
+                                    transform: rotate(3deg);
+                                    transition: 0.3s ease-in-out;
+                                }
+
+                                .menojang {}
+
+                                .menobox {
+                                    .pasting01 {
+                                        transform: rotate(-10deg);
+                                        position: absolute;
+                                        top: -1.1rem;
+                                        width: 130px;
+                                        left: 2rem;
+                                    }
+
+                                    .pasting02 {
+                                        position: absolute;
+                                        top: 70px;
+                                        left: 35px;
+                                        width: 330px;
+                                    }
+
+                                    .pasting03 {
+                                        position: absolute;
+                                        top: 277px;
+                                        left: 35px;
+                                        width: 330px;
+                                        font-family: "s4";
+                                        font-weight: 500;
+
+                                        p {}
+
+                                        a {
+                                            font-size: 1.5rem;
+                                            font-weight: 700;
+                                            color: black;
+
+                                            span {}
+                                        }
+                                    }
+
+                                    .pasting04 {
+                                        position: absolute;
+                                        top: 373px;
+                                        left: 35px;
+                                    }
+
+                                    .pasting05 {
+                                        position: absolute;
+                                        top: 402px;
+                                        right: 100px;
+                                    }
+                                }
+                            }
+
+                            .state05 {
+                                position: relative;
+
+                                &:hover {
+                                    transform: rotate(3deg);
+                                    transition: 0.3s ease-in-out;
+                                }
+
+                                .menojang {}
+
+                                .menobox {
+                                    .pasting01 {
+                                        transform: rotate(-10deg);
+                                        position: absolute;
+                                        top: -1.1rem;
+                                        width: 130px;
+                                        left: 2rem;
+                                    }
+
+                                    .pasting02 {
+                                        position: absolute;
+                                        top: 70px;
+                                        left: 35px;
+                                        width: 330px;
+                                    }
+
+                                    .pasting03 {
+                                        position: absolute;
+                                        top: 277px;
+                                        left: 35px;
+                                        width: 330px;
+                                        font-family: "s4";
+                                        font-weight: 500;
+
+                                        p {}
+
+                                        a {
+                                            font-size: 1.5rem;
+                                            font-weight: 700;
+                                            color: black;
+
+                                            span {}
+                                        }
+                                    }
+
+                                    .pasting04 {
+                                        position: absolute;
+                                        top: 373px;
+                                        left: 35px;
+                                    }
+
+                                    .pasting05 {
+                                        position: absolute;
+                                        top: 402px;
+                                        right: 100px;
+                                    }
+                                }
+                            }
+
+                            .state06 {
+                                position: relative;
+
+                                &:hover {
+                                    transform: rotate(3deg);
+                                    transition: 0.3s ease-in-out;
+                                }
+
+                                .menojang {}
+
+                                .menobox {
+                                    .pasting01 {
+                                        transform: rotate(-10deg);
+                                        position: absolute;
+                                        top: -1.1rem;
+                                        width: 130px;
+                                        left: 2rem;
+                                    }
+
+                                    .pasting02 {
+                                        position: absolute;
+                                        top: 70px;
+                                        left: 35px;
+                                        width: 330px;
+                                    }
+
+                                    .pasting03 {
+                                        position: absolute;
+                                        top: 277px;
+                                        left: 35px;
+                                        width: 330px;
+                                        font-family: "s4";
+                                        font-weight: 500;
+
+                                        p {}
+
+                                        a {
+                                            font-size: 1.5rem;
+                                            font-weight: 700;
+                                            color: black;
+
+                                            span {}
+                                        }
+                                    }
+
+                                    .pasting04 {
+                                        position: absolute;
+                                        top: 373px;
+                                        left: 35px;
+                                    }
+
+                                    .pasting05 {
+                                        position: absolute;
+                                        top: 402px;
+                                        right: 100px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .List02 {
+                position: relative;
+                background-color: #ff505e;
+                height: 135vh;
+
+                .pinkb {
+                    width: 1440px;
+                    margin: 0 auto;
+
+                    .pinkgroup {
+                        display: flex;
+                        flex-direction: column;
+
+                        .left {
+                            display: flex;
+                            flex-grow: 0;
+                            width: 55%;
+
+                            .leftbox {
+                                width: 100%;
+                                position: relative;
+
+                                picture {
+
+
+                                    .leftimg01 {
+                                        position: absolute;
+                                        top: 1rem;
+                                        left: 6%;
+                                        width: 20%;
+                                    }
+
+                                    .leftimg02 {
+                                        position: absolute;
+                                        top: 2rem;
+                                        left: 312px;
+                                        width: 9%;
+                                    }
+
+                                    .leftimg03 {
+                                        position: absolute;
+                                        top: 2rem;
+                                        left: 5%;
+                                        width: 45%;
+                                    }
+                                }
+                            }
+                        }
+
+                        .right {
+                            padding-top: 50px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            width: 600px;
+                            position: relative;
+                            left: -94px;
+                            bottom: -260px;
+
+                            .righttitle {
+                                white-space: pre-wrap;
+                                font-family: "s1";
+                                font-size: 2rem;
+                                width: 400px;
+                                text-align: center;
+                                margin: 0.5em 0;
+                            }
+
+                            .rigntbox {
+                                width: 385px;
+                                height: 670px;
+                                background-color: white;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-bottom: 30px;
+
+                                iframe {
+                                    width: 365px;
+                                    height: 650px;
+                                    border-radius: 10px;
+                                }
+                            }
+
+
+                            .twitter {
+                                background-color: #1da1f2;
+                                width: 320px;
+                                height: 50px;
+                                padding: 10px;
+                                border-radius: 5px;
+                                font-family: "s4";
+                                font-weight: 700;
+                                font-size: 20px;
+                                white-space: nowrap;
+                                background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                background-repeat: repeat-x;
+                                background-position: 0 -100%;
+                                transition: 1.5s ease;
+                                //filter: hue-rotate(30deg);
+
+                                .twitterbox {
+                                    width: 20px;
+                                    display: block;
+                                    color: white;
+                                    margin: 2px 30px;
+
+                                    #tw {
+                                        fill: white;
+                                    }
+
+
+                                    .iconright {
+                                        margin-left: 6px;
+                                    }
+                                }
+
+                                &:hover {
+                                    #tw {
+                                        fill: #1da1f2;
+                                    }
+
+                                    a {
+                                        color: #1da1f2;
+                                    }
+
+                                    background-color: white;
+                                    filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 255, 255));
+                                    //filter: hue-rotate(70deg);
+                                    background-position: 500% 100%;
+                                    border: 2px solid #1da1f2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .List03 {
+                position: relative;
+                overflow: hidden;
+
+                .List03back {
+                    height: 240vh;
+                    background-image: url("../../public/img/home/camo-black-2x.png");
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                    .listfront {
+                        width: 1440px;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-direction: column;
+
+                        .frontink {
+                            position: inherit;
+
+                            .foink1 {
+                                width: 150px;
+                                position: absolute;
+                                top: 50px;
+                                left: 0px;
+                            }
+
+                            .foink2 {
+                                width: 180px;
+                                position: absolute;
+                                top: 50px;
+                                left: 143px;
+                            }
+
+                            .foink3 {
+                                position: absolute;
+                                width: 200px;
+                                top: 137px;
+                                left: 136px;
+                                transform: rotate(227deg);
+                            }
+
+                            .foink4 {
+                                position: absolute;
+                                top: 700px;
+                                left: 631px;
+                                width: 350px;
+                            }
+
+                            .foink5 {
+                                position: absolute;
+                                right: -42px;
+                                top: 624px;
+                                width: 400px;
+                            }
+
+                        }
+
+                        .listleft {
+                            width: 55%;
+
+                            .listleftbox {
+                                width: 100%;
+                                position: relative;
+                                top: 100px;
+                                height: 100%;
+
+                                picture {
+
+                                    .game01 {
+                                        position: absolute;
+                                        width: 19%;
+                                        top: -5rem;
+                                        left: 5%;
+                                        transform: rotate(-10deg);
+                                    }
+
+                                    .game02 {
+                                        position: absolute;
+                                        width: 42%;
+                                        top: -11rem;
+                                        left: 11%;
+                                        transform: rotate(2.4deg);
+                                    }
+
+                                    .game03 {
+                                        position: absolute;
+                                        width: 31%;
+                                        top: 70%;
+                                        left: 25%;
+                                        transform: rotate(1deg);
+                                    }
+
+                                    .game04 {
+                                        position: absolute;
+                                        width: 200px;
+                                        top: 473px;
+                                        left: 126px;
+                                        transform: rotate(26deg);
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .listright {
+                            width: 600px;
+                            position: relative;
+                            top: 320px;
+                            right: 90px;
+
+                            text-align: center;
+
+                            .righttext {
+                                font-family: "s1";
+                                transform: rotate(-5deg);
+                                color: #eaff3d;
+                                font-weight: 500;
+                                font-size: 40px;
+
+                                .vartext {
+                                    color: white;
+                                    display: block;
+                                }
+                            }
+
+                            p {
+                                font-family: "s3";
+                                margin: 1em 0;
+                                color: white;
+                                font-size: 15px;
+                            }
+
+                            .listrighta {
+                                text-align: center;
+                                width: 60%;
+                                margin: 0 auto;
+
+                                a {
+
+                                    .vartext02 {
+                                        background-color: #eaff3d;
+                                        flex: 1 1;
+                                        width: 360px;
+                                        height: 60px;
+                                        display: flex;
+                                        border-radius: 10px;
+                                        font-family: "s4";
+                                        font-size: 20px;
+                                        border: none;
+                                        white-space: nowrap;
+                                        color: black;
+                                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                        background-repeat: repeat-x;
+                                        background-position: 0 -100%;
+                                        transition: 1.5s ease;
+                                        filter: hue-rotate(10deg);
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        &:hover {
+                                            background-position: 500% 100%;
+                                        }
+                                    }
+
+
+
+                                }
+                            }
+
+
+                        }
+                    }
+
+                    .banner03 {
+                        position: relative;
+                        top: 290px;
+                        width: 100%;
+
+                        .bannery {
+                            background-size: cover;
+                            height: 45px;
+                            background-image: url("../../public/img/home/banner-design1-medium-up.png");
+                            transform: rotate(1.5deg);
+                            transform-origin: 90% 50%;
+                        }
+
+                        .bannerp {
+                            background-size: cover;
+                            height: 45px;
+                            background-image: url("../../public/img/home/banner-purple-medium-up.png");
+                            transform: rotate(-1deg);
+                            transform-origin: 5% 50%;
+                        }
+                    }
+
+                    .listback {
+                        position: relative;
+
+
+                        .backonlu {
+                            picture {
+                                .onlysti {
+                                    position: absolute;
+                                    top: 188px;
+                                    left: -22px;
+                                    width: 500px;
+                                }
+                            }
+                        }
+
+                        .fronolu {
+                            position: relative;
+                            display: flex;
+                            //top: 85rem;
+                            //left: 27rem;
+                            flex-direction: column;
+                            flex-wrap: wrap-reverse;
+                            align-content: center;
+                            align-items: center;
+                            z-index: 1;
+                            opacity: 0;
+
+                            .only {
+                                font-family: "s1";
+                                color: #ff9750;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                font-size: 2rem;
+                                transform: rotate(-4deg);
+
+                                .only01 {
+                                    font-size: 2.5rem;
+                                    color: white;
+                                    width: 99%;
+                                    text-align: center;
+                                }
+                            }
+
+                            .onlybox {
+                                padding-top: 80px;
+
+                                picture {
+                                    .onlyback {
+                                        height: 500px;
+                                        width: 340px;
+                                    }
+
+                                    .only01 {
+                                        position: absolute;
+                                        left: 6rem;
+                                        top: 25rem;
+                                        width: 200px;
+                                    }
+
+                                    .only02 {
+                                        position: absolute;
+                                        left: 6rem;
+                                        top: 15rem;
+                                        width: 200px;
+                                    }
+
+                                    .only03 {
+                                        position: absolute;
+                                        left: 6.7rem;
+                                        top: 33rem;
+                                        width: 200px;
+                                    }
+                                }
+                            }
+
+                            p {
+                                padding: 44px 12px 15px;
+                                text-align: center;
+                                font-family: "s3";
+                                color: white;
+                            }
+
+                            .onlyclick {
+                                font-family: "s4";
+                                font-weight: 700;
+
+                                .onlyspan {
+                                    background-color: #eaff3d;
+                                    flex: 1 1;
+                                    width: 300px;
+                                    height: 55px;
+                                    display: flex;
+                                    /* padding: 25px 50px; */
+                                    border-radius: 10px;
+                                    font-family: "s4";
+                                    font-size: 20px;
+                                    border: none;
+                                    white-space: nowrap;
+                                    color: black;
+                                    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                    background-repeat: repeat-x;
+                                    background-position: 0 -100%;
+                                    transition: 1.5s ease;
+                                    filter: hue-rotate(10deg);
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    &:hover {
+                                        background-position: 500% 100%;
+                                    }
+                                }
+                            }
+
+
+                        }
+
+                        .active {
+                            animation: fron .5s ease-in-out forwards;
+                            animation-delay: 5s;
+                        }
+
+                        @keyframes fron {
+                            to {
+                                opacity: 1;
+                                animation-delay: 5s;
+                            }
+                        }
+
+                        .inkrgb {
+                            position: relative;
+                            opacity: 0;
+
+                            picture {
+                                .in1 {
+                                    position: absolute;
+                                    width: 400px;
+                                    right: -527px;
+                                    bottom: -264px;
+                                    transform: rotate(326deg);
+                                }
+
+                                .in2 {
+                                    position: absolute;
+                                    bottom: 377px;
+                                    right: 0px;
+                                    width: 200px;
+                                }
+
+                                .in3 {
+                                    position: absolute;
+                                    left: -532px;
+                                    top: -1000px;
+                                }
+
+                                .in4 {
+                                    position: absolute;
+                                    left: -487px;
+                                    top: -700px;
+                                }
+                            }
+                        }
+
+                        .active {
+                            animation: inkt 0.5s ease-in-out forwards;
+                        }
+
+                        @keyframes inkt {
+                            to {
+                                opacity: 1;
+                            }
+                        }
+
+                    }
+
+
+                }
+            }
+
+            .List04 {
+                height: 100vh;
+                background-image: url("../../public/img/home/tapes-purple.jpg");
+
+                .banner04 {
+                    .bannerb {
+                        background-size: cover;
+                        height: 45px;
+                        background-image: url("../../public/img/home/banner-design3-medium-up.png");
+                        transform: rotate(-1deg);
+                        transform-origin: -100% 50%;
+                    }
+
+                    .bannerg {
+                        background-size: cover;
+                        height: 45px;
+                        background-image: url("../../public/img/home/banner-yellow-medium-up.png");
+                        transform: rotate(1deg);
+                        transform-origin: 260% 50%;
+                    }
+                }
+
+                .bluestc {
+                    width: 1440px;
+                    margin: 0 auto;
+                    height: 70%;
+
+                    .bluestcbox {
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        flex-direction: column-reverse;
+
+                        .blueleft {
+                            position: relative;
+                            width: 415px;
+                            text-align: center;
+                            padding: 0 10px;
+                            margin-bottom: 48px;
+                            top: 200px;
+
+                            picture {
+                                .mynin {}
+                            }
+
+                            h2 {
+                                margin-top: 20px;
+                                color: #eaff3d;
+                                font-size: 4rem;
+                                font-family: "s1";
+                            }
+
+                            .content-spacing {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                height: 22rem;
+                                margin-top: 20px;
+                                color: white;
+                                font-family: "s3";
+
+                                p {}
+
+                                .monnimg {
+
+                                    .mon01 {
+                                        &:nth-child(1) {
+                                            .mon {
+                                                fill: #EAFF3C;
+                                            }
+
+                                            .non {
+                                                fill: #81C32C;
+                                            }
+                                        }
+
+                                        &:nth-child(2) {
+                                            .mon {
+                                                fill: #FF585E;
+                                            }
+
+                                            .non {
+                                                fill: #B62E35;
+                                            }
+
+                                            margin-left: 10px;
+                                        }
+
+                                        &:nth-child(3) {
+                                            .mon {
+                                                fill: #FF9750;
+                                            }
+
+                                            .non {
+                                                fill: #CB6B15;
+                                            }
+
+                                            margin-left: 10px;
+                                        }
+
+                                        &:nth-child(4) {
+                                            .mon {
+                                                fill: #6AF7CE;
+                                            }
+
+                                            .non {
+                                                fill: #00A0AA;
+                                            }
+
+                                            margin-left: 10px;
+                                        }
+
+                                        &:nth-child(5) {
+                                            .mon {
+                                                fill: #AF50FF;
+                                            }
+
+                                            .non {
+                                                fill: #5E3F94;
+                                            }
+
+                                            margin-left: 10px;
+                                        }
+
+                                    }
+                                }
+
+                                .inboxa {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .inbox {
+                                        background-color: #eaff3d;
+                                        display: flex;
+                                        padding: 20px 140px;
+                                        border-radius: 10px;
+                                        font-family: "s4";
+                                        font-size: 20px;
+                                        border: none;
+                                        white-space: nowrap;
+                                        color: black;
+                                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                                        background-repeat: repeat-x;
+                                        background-position: 0 -100%;
+                                        transition: 1.5s ease;
+                                        filter: hue-rotate(10deg);
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        &:hover {
+                                            background-position: 500% 100%;
+                                        }
+                                    }
+                                }
+
+                                .doin {
+                                    display: flex;
+                                    justify-content: center;
+
+                                    .dodo {
+                                        text-decoration: underline;
+                                    }
+
+                                }
+
+                                .doout {
+                                    display: flex;
+                                    justify-content: center;
+                                    font-size: 1px;
+                                    flex-direction: row;
+
+                                    .inboxb {
+                                        .dodo {
+                                            color: white;
+                                            text-decoration: underline;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .blueright {
+                            position: relative;
+                            width: 30%;
+                            top: -156px;
+
+                            picture {
+                                .char8 {
+                                    position: absolute;
+                                    left: 12px;
+                                    top: -10%;
+                                    width: 50%;
+                                }
+
+                                .char9 {
+                                    position: absolute;
+                                    left: 28%;
+                                    top: 12%;
+                                    width: 62%;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        .footerbox {
+            height: 80vh;
+            background-color: black;
+            position: relative;
+            overflow-y: hidden;
+            overflow-x: hidden;
+
+            .foimgback {
+                .inkfoterleft {
+                    picture {
+
+
+                        .o01 {
+                            display: none;
+                            width: 100px;
+                            position: absolute;
+                            left: 15rem;
+                            top: 8rem;
+                            transform: rotate(-10deg);
+                        }
+
+                        .o02 {
+                            position: absolute;
+                            left: -11rem;
+                            top: 32rem;
+                            width: 18rem;
+                            transform: rotate(240deg);
+                        }
+
+                        .o03 {
+                            display: none;
+                            position: absolute;
+                            left: 6rem;
+                            top: 26rem;
+                            transform: rotate(328deg);
+                        }
+                    }
+                }
+
+                .inkfoterright {
+                    picture {
+
+                        .o04 {
+                            display: none;
+                            width: 150px;
+                            position: absolute;
+                            right: 10rem;
+                            top: 8rem;
+                            transform: rotate(10deg);
+                        }
+
+                        .o05 {
+                            display: none;
+                            position: absolute;
+                            right: 2rem;
+                            top: 14rem;
+                            width: 19rem;
+                        }
+
+                        .o06 {
+                            position: absolute;
+                            right: -5rem;
+                            top: 35rem;
+                            width: 15rem;
+                            transform: rotate(322deg);
+                        }
+                    }
+                }
+            }
+
+            .fotextback {
+                .foterbtn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-top: 50px;
+
+                    button {
+                        padding: 15px 110px;
+                        border-radius: 10px;
+                        font-family: "s4";
+                        font-size: 20px;
+                        border: none;
+                        white-space: nowrap;
+                        color: #eaff3d;
+                        background-color: #603bff;
+                        background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+                        background-repeat: repeat-x;
+                        background-position: 0 -100%;
+                        transition: 1.5s ease;
+                        filter: hue-rotate(10deg);
+
+                        &:hover {
+                            background-position: 500% 100%;
+                        }
+                    }
+                }
+
+                .text-back {
+                    margin: 30px 30px 0;
+                    font-size: 14px;
+
+                    .ptag {
+                        gap: 15px;
+                        display: flex;
+                        color: white;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+
+                        p {
+                            font-size: 2px;
+
+                            a {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                span {
+                                    color: white;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+
+
+                .img-back {
+                    margin-top: 25px;
+                    color: white;
+                    display: flex;
+                    gap: 30px;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .endleft {
+                        text-align: center;
+                        font-weight: 500;
+
+                        .leftfoll {
+                            padding-bottom: 20px;
+                        }
+
+                        .foll {
+                            img {
+                                margin: 0 12px;
+                                width: 50px;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+
+                    .endrignt {
+                        display: flex;
+                        gap: 20px;
+                        justify-content: center;
+
+                        .whbox {
+                            width: 12rem;
+                            height: 5rem;
+                            background-color: white;
+                            display: flex;
+                            align-items: center;
+
+                            .en {
+                                height: 5rem;
+                            }
+
+                            p {
+                                margin: 5px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                color: black;
+                            }
+                        }
+
+                        .esrb {
+                            height: 5rem;
+                        }
+                    }
+                }
+
+                .endbox {
+                    margin-top: 40px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+
+
+                    .linka {
+                        gap: 11px;
+                        display: flex;
+                        font-size: 12px;
+                        flex-direction: column;
+                        text-align: center;
+
+                        a {
+
+                            span {
+                                color: white;
+                            }
+                        }
+
+
+                    }
+
+                    .endtext {
+                        margin-top: 30px;
+                        color: white;
+                        font-size: 12px;
+                    }
+                }
+
+
+
+            }
+        }
+
+    }
 }

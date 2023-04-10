@@ -25,48 +25,49 @@ import { ReactComponent as Monn } from '../imgs/monn.svg';
 
 const Home = () => {
   const { setState } = useContext(Context);
-    let { page } = useParams();
-    
-   
+  let { page } = useParams();
+
   console.log(window.scrollY);
   <Route path="/:page"></Route>;
-    useEffect(() => {
-      
+
+  let dd = [false, false, false, false, false];
+  useEffect(() => {
     window.addEventListener('scroll', handlescroll);
     return () => {
       window.removeEventListener('scroll', handlescroll);
     };
-        
-        
+
     setState(true);
   }, []);
 
   var isVisible = false;
 
   const handlescroll = () => {
-    let demo = document.querySelector('.a');
     let bemo = document.querySelector('.b');
+    let Aemo = document.querySelector('.a');
     let remo = document.querySelector('.rot');
     let inkemo = document.querySelector('.inkrgb');
     let fron = document.querySelector('.fronolu');
 
     let observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          entry.target.classList.add('active');
+      entries.forEach((entry, key) => {
+        if (!dd[key]) {
+          if (entry.intersectionRatio > 0) {
+            entry.target.classList.add('active');
+            dd[key] = true;
+          }
         } else {
-          entry.target.classList.remove('active');
+          //   entry.target.classList.remove('active');
         }
       });
     });
 
-    observer.observe(demo);
     observer.observe(bemo);
+    observer.observe(Aemo);
     observer.observe(remo);
     observer.observe(inkemo);
     observer.observe(fron);
   };
-
 
   return (
     <>
